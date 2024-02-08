@@ -1,0 +1,18 @@
+{
+  "item.ie.moon_matter": "Moon Matter",
+  "item.ie.raw_highly_advanced_alloy": "Raw Highly Advanced Alloy",
+  "item.ie.highly_advanced_alloy": "Highly Advanced Alloy",
+  "item.ie.utec": "UTEC",
+
+  "block.ie.quantum_quarry": "Quantum Quarry",
+  "block.ie.nano_machine_casing": "Nano Machine Casing",
+  "block.ie.quantum_machine_casing": "Quantum Machine Casing",
+
+  "block.ie.advanced_lv_panel": "Advanced LV Solar Panel",
+  "block.ie.advanced_mv_panel": "Advanced MV Solar Panel",
+  "block.ie.advanced_hv_panel": "Advanced HV Solar Panel",
+  "block.ie.advanced_ev_panel": "Advanced EV Solar Panel",
+  "block.ie.advanced_luv_panel": "Advanced LuV Solar Panel",
+  "block.ie.utesu": "UTESU",
+  "block.ie.uv_transformer": "UV Transformer"
+}

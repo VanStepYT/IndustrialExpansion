@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "ie:block/quantum_quarry_bottom",
+    "east": "ie:block/quantum_quarry_side",
+    "north": "ie:block/quantum_quarry_side",
+    "particle": "ie:block/quantum_quarry_side",
+    "south": "ie:block/quantum_quarry_side",
+    "up": "ie:block/quantum_quarry_top",
+    "west": "ie:block/quantum_quarry_side"
+  }
+}

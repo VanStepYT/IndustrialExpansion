@@ -1,0 +1,50 @@
+{
+  "type": "ic2:crafting_ic2_automated",
+  "sub_type": "ic2:shaped",
+  "enabled": true,
+  "output": {
+    "item": "ie:advanced_hv_panel",
+    "count": 1
+  },
+  "hidden": false,
+  "consume": false,
+  "width": 3,
+  "height": 3,
+  "inputs": [
+    {
+      "item": "ie:highly_advanced_alloy",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "A"
+    },
+    {
+      "item": "ic2:lapotron_crystal",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "B"
+    },
+    {
+      "item": "ic2:stabilized_machine_casing",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "C"
+    },
+    {
+      "item": "ie:advanced_mv_panel",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "D"
+    },
+    {
+      "item": "ic2:solar_panel_hv",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "E"
+    }
+  ],
+  "pattern": [
+    "ABA",
+    "CDC",
+    "AEA"
+  ]
+}

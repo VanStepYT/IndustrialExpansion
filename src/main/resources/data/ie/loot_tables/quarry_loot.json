@@ -1,0 +1,22 @@
+{
+  "type": "item",
+  "name": "ie:quarry_loot",
+  "entries": [
+    {
+      "type": "item",
+      "name": "minecraft:raw_iron"
+    },
+    {
+      "type": "item",
+      "name": "minecraft:raw_gold"
+    },
+    {
+      "type": "item",
+      "name": "minecraft:raw_copper"
+    },
+    {
+      "type": "item",
+      "name": "minecraft:diamond"
+    }
+  ]
+}

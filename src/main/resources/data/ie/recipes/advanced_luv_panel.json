@@ -1,0 +1,56 @@
+{
+  "type": "ic2:crafting_ic2_automated",
+  "sub_type": "ic2:shaped",
+  "enabled": true,
+  "output": {
+    "item": "ie:advanced_luv_panel",
+    "count": 1
+  },
+  "hidden": false,
+  "consume": false,
+  "width": 3,
+  "height": 3,
+  "inputs": [
+    {
+      "item": "ie:highly_advanced_alloy",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "A"
+    },
+    {
+      "item": "ie:moon_matter",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "F"
+    },
+    {
+      "item": "ic2:uesc",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "B"
+    },
+    {
+      "item": "ie:quantum_machine_casing",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "C"
+    },
+    {
+      "item": "ie:advanced_ev_panel",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "D"
+    },
+    {
+      "item": "ie:uv_transformer",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "E"
+    }
+  ],
+  "pattern": [
+    "FBF",
+    "CDC",
+    "AEA"
+  ]
+}

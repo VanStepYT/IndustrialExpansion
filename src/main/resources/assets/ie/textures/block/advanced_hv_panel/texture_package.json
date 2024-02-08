@@ -1,0 +1,5 @@
+{
+  "top": "ie:block/advanced_hv_panel/top",
+  "bottom": "ie:block/advanced_hv_panel/bottom",
+  "side": "ie:block/advanced_hv_panel/side"
+}

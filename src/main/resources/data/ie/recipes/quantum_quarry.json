@@ -1,0 +1,57 @@
+{
+  "type": "ic2:crafting_ic2_automated",
+  "sub_type": "ic2:shaped",
+  "enabled": true,
+  "output": {
+    "item": "ie:quantum_quarry",
+    "count": 1
+  },
+  "hidden": false,
+  "consume": false,
+  "width": 3,
+  "height": 3,
+  "inputs": [
+    {
+      "item": "ic2:glassfiber_cable_item",
+      "size": 2,
+      "type": "ic2:item",
+      "letter": "A"
+    },
+    {
+      "item": "ic2:stabilized_machine_block",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "B"
+    },
+    {
+      "item": "ic2:advanced_alloy_plate",
+      "size": 2,
+      "type": "ic2:item",
+      "letter": "C"
+    },
+    {
+      "item": "ic2:lapotron_crystal",
+      "size": 2,
+      "type": "ic2:item",
+      "letter": "D"
+    },
+    {
+      "item": "ic2:miner",
+      "size": 2,
+      "type": "ic2:item",
+      "letter": "E"
+    },
+    {
+      "item": "ic2:diamond_drill",
+      "size": 2,
+      "type": "ic2:item",
+      "letter": "F"
+    }
+
+  ],
+  "pattern": [
+    "ADA",
+    "BEB",
+    "CFC"
+  ]
+}

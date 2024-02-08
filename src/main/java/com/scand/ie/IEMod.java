@@ -1,6 +1,12 @@
 package com.scand.ie;
 
 import com.mojang.logging.LogUtils;
+import com.scand.ie.ModItems.ModItems;
+import com.scand.ie.block.ModBlockEntities;
+import com.scand.ie.block.ModBlocks;
+import com.scand.ie.screen.ModMenuTypes;
+import com.scand.ie.screen.QuantumQuarryScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,17 +28,27 @@ public class IEMod
     public IEMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
+
+
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
     private void commonSetup(final FMLCommonSetupEvent event){
-
     }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            MenuScreens.register(ModMenuTypes.QUANTUM_QUARRY_MENU.get(), QuantumQuarryScreen::new);
         }
     }
 }
