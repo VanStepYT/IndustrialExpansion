@@ -17,18 +17,15 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AdvancedEVPanelTile extends BaseGeneratorTileEntity implements ITickListener, IEnergySource, IWrenchableTile, IEUProducer, ITileActivityProvider {
-    private final int maxOutput;
-    private final BlockPos pos;
+
     private int lowerProduction;
 
     public AdvancedEVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.pos = pos;
         this.tier = 4;
         this.production = 8192;
         this.lowerProduction = 4096;
         this.maxStorage = 131072;
-        this.maxOutput = 16384;
     }
 
     @Override
@@ -40,11 +37,8 @@ public class AdvancedEVPanelTile extends BaseGeneratorTileEntity implements ITic
     public boolean gainEnergy() {
         if(this.isConverting()){
             if(skyBlockCheck()){
-                if(this.isSunVisible(level)){
-                    this.storage += this.production;
-                }else {
-                    this.storage += this.lowerProduction;
-                }
+                this.storage += this.isSunVisible(level) ? this.production : this.lowerProduction;
+
             }
             return true;
         }

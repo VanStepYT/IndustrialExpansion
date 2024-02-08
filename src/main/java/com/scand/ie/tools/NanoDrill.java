@@ -39,22 +39,19 @@ import java.util.Iterator;
 
 public class NanoDrill extends DrillTool implements IMultiTargetTool {
     public NanoDrill() {
-        super("nano_drill", 4, 40, 60.0F);
+        super("nano_drill", 4, 40, 120f);
         this.tier = 4;
         this.capacity = 35000;
     }
-
     @OnlyIn(Dist.CLIENT)
     public TextureAtlasSprite getTexture() {
         return IC2Textures.getMappedEntriesItem(IEMod.MOD_ID, "tools/drill").get("nano");
     }
-
-
     public float getDestroySpeed(ItemStack stack, BlockState state) {
         if (!ElectricItem.MANAGER.canUse(stack, this.getEnergyCost(stack))) {
             return 1.0F;
         } else if (this.isCorrectToolForDrops(stack, state)) {
-            return this.isMultiMining(stack) ? 540f : 60.0F;
+            return 120.0F;
         } else {
             return 1.0F;
         }
@@ -65,10 +62,9 @@ public class NanoDrill extends DrillTool implements IMultiTargetTool {
             Level world = player.level;
             BlockHitResult ray = getPlayerPOVHitResult(world, player, ClipContext.Fluid.NONE);
             int removed = 0;
-            Iterator var7 = IterableWrapper.wrap(this.getHitPositions(stack, player, pos, ray.getDirection())).iterator();
-
-            while(var7.hasNext()) {
-                BlockPos offset = (BlockPos)var7.next();
+            Iterator offsets = IterableWrapper.wrap(this.getHitPositions(stack, player, pos, ray.getDirection())).iterator();
+            while(offsets.hasNext()) {
+                BlockPos offset = (BlockPos)offsets.next();
                 BlockState state = world.getBlockState(offset);
                 if (!state.isAir() && state.getDestroySpeed(world, pos) >= 0.0F) {
                     BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(world, offset, state, player);
@@ -80,19 +76,17 @@ public class NanoDrill extends DrillTool implements IMultiTargetTool {
                             block.destroy(world, offset, state);
                             block.playerDestroy(world, player, offset, state, tile, stack);
                             if (event.getExpToDrop() != -1 && world instanceof ServerLevel) {
-                                ServerLevel server = (ServerLevel)world;
-                                block.popExperience(server, pos, event.getExpToDrop());
+                                block.popExperience((ServerLevel) world, pos, event.getExpToDrop());
                             }
 
-                            ++removed;
+                            removed++;
                         }
                     }
                 }
             }
 
             if (removed > 0) {
-                player.awardStat(IC2Stats.BLOCKS_DRILLED);
-                ElectricItem.MANAGER.use(stack, this.getEnergyCost(stack) * removed, player);
+                ElectricItem.MANAGER.use(stack, this.getEnergyCost(stack), player);
                 return true;
             }
         }

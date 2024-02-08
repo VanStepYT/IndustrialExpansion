@@ -21,18 +21,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import static ic2.core.block.generators.tiles.SolarPanelTileEntity.isSunVisible;
 
 public class AdvancedLVPanelTile extends BaseGeneratorTileEntity implements ITickListener, IEnergySource, IWrenchableTile, IEUProducer, ITileActivityProvider {
-    private final int maxOutput;
-    private final BlockPos pos;
     private int lowerProduction;
 
     public AdvancedLVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.pos = pos;
         this.tier = 1;
         this.production = 8;
         this.lowerProduction = 4;
         this.maxStorage = 128;
-        this.maxOutput = 16;
     }
 
     @Override
@@ -44,11 +40,7 @@ public class AdvancedLVPanelTile extends BaseGeneratorTileEntity implements ITic
     public boolean gainEnergy() {
         if(this.isConverting()){
             if(skyBlockCheck()){
-                if(this.isSunVisible(level)){
-                    this.storage += this.production;
-                }else {
-                    this.storage += this.lowerProduction;
-                }
+                this.storage += this.isSunVisible(level) ? this.production : this.lowerProduction;
             }
             return true;
         }

@@ -17,18 +17,14 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AdvancedLUVPanelTile extends BaseGeneratorTileEntity implements ITickListener, IEnergySource, IWrenchableTile, IEUProducer, ITileActivityProvider {
-    private final int maxOutput;
-    private final BlockPos pos;
     private int lowerProduction;
 
     public AdvancedLUVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.pos = pos;
         this.tier = 5;
         this.production = 65536;
         this.lowerProduction = 32768;
         this.maxStorage = 4194304;
-        this.maxOutput = 131072;
     }
 
     @Override
@@ -40,11 +36,7 @@ public class AdvancedLUVPanelTile extends BaseGeneratorTileEntity implements ITi
     public boolean gainEnergy() {
         if(this.isConverting()){
             if(skyBlockCheck()){
-                if(this.isSunVisible(level)){
-                    this.storage += this.production;
-                }else {
-                    this.storage += this.lowerProduction;
-                }
+                this.storage += this.isSunVisible(level) ? this.production : this.lowerProduction;
             }
             return true;
         }
@@ -77,7 +69,7 @@ public class AdvancedLUVPanelTile extends BaseGeneratorTileEntity implements ITi
 
     @Override
     public BlockEntityType<?> createType() {
-        return ModBlocks.ADVANCED_LV_PANEL_TYPE;
+        return ModBlocks.ADVANCED_LUV_PANEL_TYPE;
     }
 
     @Override
