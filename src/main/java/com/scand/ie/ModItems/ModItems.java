@@ -1,12 +1,17 @@
 package com.scand.ie.ModItems;
 
 import com.scand.ie.IEMod;
+import com.scand.ie.armor.SpectralArmorItem;
 import com.scand.ie.block.ModBlocks;
+import com.scand.ie.tools.NanoDrill;
 import ic2.core.block.base.misc.color.IColorListener;
 import ic2.core.item.block.CableItem;
+import ic2.core.item.wearable.armor.electric.QuantumSuit;
+import ic2.core.item.wearable.base.IC2ModularElectricArmor;
 import ic2.core.platform.registries.IC2Blocks;
 import ic2.core.utils.plugins.IRegistryProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -32,6 +37,22 @@ public class ModItems {
 
     public static final RegistryObject<Item> UTEC = ITEMS.register("utec",
             ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+
+    public static final RegistryObject<Item> SPECTRAL_SUIT_CHESTPLATE = ITEMS.register("spectral_suit_chestplate",
+            ()->new SpectralArmorItem("spectral_suit_chestplate", EquipmentSlot.CHEST));
+    public static final RegistryObject<Item> SPECTRAL_SUIT_LEGGINGS = ITEMS.register("spectral_suit_leggings",
+            ()->new SpectralArmorItem("spectral_suit_leggings", EquipmentSlot.LEGS));
+    public static final RegistryObject<Item> SPECTRAL_SUIT_BOOTS = ITEMS.register("spectral_suit_boots",
+            ()->new SpectralArmorItem("spectral_suit_boots", EquipmentSlot.FEET));
+    public static final RegistryObject<Item> SPECTRAL_SUIT_HELMET = ITEMS.register("spectral_suit_helmet",
+            ()->new SpectralArmorItem("spectral_suit_helmet", EquipmentSlot.HEAD));
+
+    public static final RegistryObject<Item> NANO_DRILL = ITEMS.register("nano_drill",
+            NanoDrill::new);
+
+
+
 
     public static Item SPECTRAL_CABLE;
     private static void registerSomeCables(){
