@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/spectralium_fabricator/side",
+	"down": "ie:block/spectralium_fabricator/side",
+	"up": "ie:block/spectralium_fabricator/side",
+	"west": "ie:block/spectralium_fabricator/side",
+	"east": "ie:block/spectralium_fabricator/side",
+	"south": "ie:block/spectralium_fabricator/front"
+}

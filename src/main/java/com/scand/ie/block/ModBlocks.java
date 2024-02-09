@@ -3,17 +3,23 @@ package com.scand.ie.block;
 import com.scand.ie.IEMod;
 import com.scand.ie.ModItems.ModItems;
 import com.scand.ie.block.custom.IridiumFabricatorTile;
+import com.scand.ie.block.custom.SpectraliumFabricatorTile;
+import com.scand.ie.block.custom.cable.PhotonCableTile;
+import com.scand.ie.block.custom.machines.SpectralCompressor;
+import com.scand.ie.block.custom.machines.SpectralFurnace;
+import com.scand.ie.block.custom.machines.SpectralMacerator;
 import com.scand.ie.block.entity.*;
 import ic2.core.block.base.IAutoCreator;
 import ic2.core.block.base.IToolProvider;
 import ic2.core.block.base.drops.IBlockDropProvider;
 import ic2.core.block.base.misc.color.IColorListener;
+import ic2.core.block.cables.CableBlock;
 import ic2.core.block.cables.CableTileEntity;
 import ic2.core.block.cables.Cables;
 import ic2.core.block.machines.BaseMachineBlock;
 import ic2.core.platform.registries.IC2Blocks;
-import ic2.core.platform.registries.IC2Items;
 import ic2.core.platform.registries.IC2Tiles;
+import ic2.core.platform.rendering.IC2Models;
 import ic2.core.platform.rendering.features.ITextureProvider;
 import ic2.core.utils.plugins.IRegistryProvider;
 import net.minecraft.world.item.BlockItem;
@@ -30,8 +36,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-import static ic2.core.platform.registries.IC2Items.COLORABLE;
-
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, IEMod.MOD_ID);
@@ -41,8 +45,14 @@ public class ModBlocks {
     public static final BlockEntityType<AdvancedHVPanelTile> ADVANCED_HV_PANEL_TYPE = IC2Tiles.createTile("advanced_hv_solar_panel", AdvancedHVPanelTile::new);
     public static final BlockEntityType<AdvancedEVPanelTile> ADVANCED_EV_PANEL_TYPE = IC2Tiles.createTile("advanced_ev_solar_panel", AdvancedEVPanelTile::new);
     public static final BlockEntityType<AdvancedLUVPanelTile> ADVANCED_LUV_PANEL_TYPE = IC2Tiles.createTile("advanced_luv_solar_panel", AdvancedLUVPanelTile::new);
+    public static final BlockEntityType<AdvancedUVPanelTile> ADVANCED_UV_PANEL_TYPE = IC2Tiles.createTile("advanced_uv_solar_panel", AdvancedUVPanelTile::new);
     public static final BlockEntityType<IridiumFabricatorTile> IRIDIUM_FABRICATOR_TYPE = IC2Tiles.createTile("iridium_fabricator", IridiumFabricatorTile::new);
-    public static final BlockEntityType<SpectralCable> SPECTRAL_CABLE_TYPE = IC2Tiles.createTile("spectral_cable", SpectralCable::new);
+    public static final BlockEntityType<PhotonCableTile> PHOTON_CABLE_TYPE = IC2Tiles.createTile("photon_cable", PhotonCableTile::new);
+    public static final BlockEntityType<SpectraliumFabricatorTile> SPECTRALIUM_FABRICATOR_TYPE = IC2Tiles.createTile("spectralium_fabricator", SpectraliumFabricatorTile::new);
+    public static final BlockEntityType<SpectralMacerator> SPECTRAL_MACERATOR_TYPE = IC2Tiles.createTile("spectral_macerator", SpectralMacerator::new);
+    public static final BlockEntityType<SpectralCompressor> SPECTRAL_COMPRESSOR_TYPE = IC2Tiles.createTile("spectral_compressor", SpectralCompressor::new);
+
+    public static final BlockEntityType<SpectralFurnace> SPECTRAL_FURNACE_TYPE = IC2Tiles.createTile("spectral_furnace", SpectralFurnace::new);
     public static final RegistryObject<Block> QUANTUM_QUARRY = registerBlock("quantum_quarry",
             () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
             CreativeModeTab.TAB_MISC);
@@ -50,13 +60,35 @@ public class ModBlocks {
     public static final RegistryObject<Block> IRIDIUM_FABRICATOR = registerBlock("iridium_fabricator",
             () -> new BaseMachineBlock("iridium_fabricator", IBlockDropProvider.SELF_OR_ADV_MACHINE, ITextureProvider.noState(IEMod.MOD_ID,
                     "iridium_fabricator"),IRIDIUM_FABRICATOR_TYPE),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> SPECTRALIUM_FABRICATOR = registerBlock("spectralium_fabricator",
+            () -> new BaseMachineBlock("spectralium_fabricator", IBlockDropProvider.SELF_OR_ADV_MACHINE, ITextureProvider.noState(IEMod.MOD_ID,
+                    "spectralium_fabricator"),SPECTRALIUM_FABRICATOR_TYPE),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> SPECTRAL_MACERATOR = registerBlock("spectral_macerator",
+            () -> new BaseMachineBlock("spectral_macerator", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "spectral_macerator"),SPECTRAL_MACERATOR_TYPE),
+            CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> SPECTRAL_COMPRESSOR = registerBlock("spectral_compressor",
+            () -> new BaseMachineBlock("spectral_compressor", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "spectral_compressor"),SPECTRAL_COMPRESSOR_TYPE),
+            CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> SPECTRAL_FURNACE = registerBlock("spectral_furnace",
+            () -> new BaseMachineBlock("spectral_furnace", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "spectral_furnace"),SPECTRAL_FURNACE_TYPE),
+            CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> NANO_MACHINE_CASING = registerBlock("nano_machine_casing",
-            () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
             CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> QUANTUM_MACHINE_CASING = registerBlock("quantum_machine_casing",
-            () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
+            CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> SPECTRAL_MACHINE_CASING = registerBlock("spectral_machine_casing",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
             CreativeModeTab.TAB_MISC);
 
     //public static final AdvancedLVSolarPanelBlock ADVANCED_LV_PANEL = new AdvancedLVSolarPanelBlock("advanced_lv_panel", ADVANCED_LV_PANEL_TYPE);
@@ -80,23 +112,37 @@ public class ModBlocks {
     public static final RegistryObject<Block> ADVANCED_LUV_PANEL = registerBlock("advanced_luv_panel",
             () -> new AdvancedLUVSolarPanelBlock("advanced_luv_panel", ADVANCED_LUV_PANEL_TYPE),
             CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> ADVANCED_UV_PANEL = registerBlock("advanced_uv_panel",
+            () -> new AdvancedUVSolarPanelBlock("advanced_uv_panel", ADVANCED_UV_PANEL_TYPE),
+            CreativeModeTab.TAB_MISC);
+
+
     public static BlockEntityType<UVTransformerTileEntity> UVTRANSFORMER_TYPE = IC2Tiles.createTile("uv_transformer", UVTransformerTileEntity::new);
     public static final RegistryObject<Block> UV_TRANSFORMER = registerBlock("uv_transformer",
             () -> new UVTransformerBlock("uv_transformer", UVTRANSFORMER_TYPE),
             CreativeModeTab.TAB_MISC);
-    public static final BlockEntityType<UTESUTile> UTESU_TILE_TYPE = IC2Tiles.createTile("utesu", (BlockEntityType.BlockEntitySupplier<UTESUTile>) UTESUTile::new);
+    public static final BlockEntityType<UTESUTile> UTESU_TILE_TYPE = IC2Tiles.createTile("utesu", UTESUTile::new);
+    public static final BlockEntityType<HUTESUTile> HUTESU_TILE_TYPE = IC2Tiles.createTile("hutesu", HUTESUTile::new);
 
     public static final RegistryObject<Block> UTESU = registerBlock("utesu",
             () -> new UTESUBlock("utesu", UTESU_TILE_TYPE),
             CreativeModeTab.TAB_MISC);
 
+    public static final RegistryObject<Block> HUTESU = registerBlock("hutesu",
+            () -> new HUTESUBlock("hutesu", HUTESU_TILE_TYPE),
+            CreativeModeTab.TAB_MISC);
 
-    public static Block SPECTRAL_CABLE;
+    public static final  CableBlock.CableInstance PHOTON_CABLE_INSTANCE = new
+            CableBlock.CableInstance(false,false,false,0, new float[]{2.0F},
+            "electric/cable", Cables::getPlasmaDrop).addTextures(new String[]{"photon"});
+    //public static final Block PHOTON_CABLE = registerBlock(CableBlock.createBlock("photon_cable", PHOTON_CABLE_INSTANCE, PHOTON_CABLE_TYPE));
 
-    static void addCables() {
-        SPECTRAL_CABLE = registerBlock(SpectralCableBlock.createSBlock("spectral_cable", (new SpectralCableBlock.CableInstance(false, false, false, 0, new float[]{6.0F}, "spectral/", Cables::getPlasmaDrop)).addTextures(new String[]{"plasma"}).setHasUninsulatedColor(), ModBlocks.SPECTRAL_CABLE_TYPE));
-
-    }
+    public static final RegistryObject<Block> PHOTON_CABLE = registerBlock("photon_cable",
+            ()->CableBlock.createBlock("photon_cable",
+                    new CableBlock.CableInstance(false,false,false,0, new float[]{2.0F},
+                            "electric/cable", Cables::getPlasmaDrop).addTextures("photon"),
+                    PHOTON_CABLE_TYPE),
+            CreativeModeTab.TAB_MISC);
 
     public static <T extends Block & IRegistryProvider> T registerBlock(T block) {
         ForgeRegistries.BLOCKS.register((block).getRegistryName(), block);
@@ -111,7 +157,6 @@ public class ModBlocks {
                 }
             }
         }
-
         if (block instanceof IToolProvider provider) {
             provider.registerTools();
         }
@@ -138,8 +183,19 @@ public class ModBlocks {
                 new Item.Properties().tab(tab)));
     }
 
+    public static CableBlock createBlock(String name, final CableBlock.CableInstance cable, BlockEntityType<? extends CableTileEntity> creator) {
+        return new CableBlock(name, creator) {
+            public CableInstance createInstance() {
+                return cable;
+            }
+        };
+    }
+
     public static void register(IEventBus eventBus){
+
         BLOCKS.register(eventBus);
         //addCables();
+
+
     }
 }

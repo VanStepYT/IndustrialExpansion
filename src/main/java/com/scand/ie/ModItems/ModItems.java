@@ -1,6 +1,7 @@
 package com.scand.ie.ModItems;
 
 import com.scand.ie.IEMod;
+import com.scand.ie.ModItems.custom.SpectralOverclockerUpgrade;
 import com.scand.ie.armor.SpectralArmorItem;
 import com.scand.ie.block.ModBlocks;
 import com.scand.ie.tools.NanoDrill;
@@ -50,6 +51,20 @@ public class ModItems {
     public static final RegistryObject<Item> SPECTRAL_SUIT_HELMET = ITEMS.register("spectral_suit_helmet",
             ()->new SpectralArmorItem("spectral_suit_helmet", EquipmentSlot.HEAD));
 
+    public static final RegistryObject<Item> SPECTRAL_CIRCUIT = ITEMS.register("spectral_circuit",
+            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> QUANTUM_CIRCUIT = ITEMS.register("quantum_circuit",
+            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> NANO_CIRCUIT = ITEMS.register("nano_circuit",
+            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> SPECTRAL_CRAFTING_COMPONENT = ITEMS.register("spectral_crafting_component",
+            ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> SPECTRAL_PLATE = ITEMS.register("spectral_plate",
+            ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+    public static final RegistryObject<Item> SPECTRALIUM = ITEMS.register("spectralium",
+            ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
     public static final RegistryObject<Item> NANO_DRILL = ITEMS.register("nano_drill",
             NanoDrill::new);
     public static final RegistryObject<Item> QUANTUM_DRILL = ITEMS.register("quantum_drill",
@@ -63,7 +78,7 @@ public class ModItems {
 
     public static Item SPECTRAL_CABLE;
     private static void registerSomeCables(){
-        SPECTRAL_CABLE = registerItem(new CableItem("spectral_cable", ModBlocks.SPECTRAL_CABLE.defaultBlockState(), "spectral"));
+        //SPECTRAL_CABLE = registerItem(new CableItem("spectral_cable", ModBlocks.SPECTRAL_CABLE.defaultBlockState(), "spectral"));
 
     }
 

@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/spectral_furnace/side",
+  "active_down": "ie:block/spectral_furnace/side",
+  "active_up": "ie:block/spectral_furnace/side",
+  "active_west": "ie:block/spectral_furnace/side",
+  "active_east": "ie:block/spectral_furnace/side",
+  "active_south": "ie:block/spectral_furnace/active_main",
+
+  "inactive_north": "ie:block/spectral_furnace/side",
+  "inactive_down": "ie:block/spectral_furnace/side",
+  "inactive_up": "ie:block/spectral_furnace/side",
+  "inactive_west": "ie:block/spectral_furnace/side",
+  "inactive_east": "ie:block/spectral_furnace/side",
+  "inactive_south": "ie:block/spectral_furnace/inactive_main"
+}

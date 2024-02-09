@@ -18,13 +18,13 @@
       "letter": "A"
     },
     {
-      "item": "ic2:lapotron_crystal",
+      "item": "ic2:lapatron_crystal",
       "size": 1,
       "type": "ic2:item",
       "letter": "B"
     },
     {
-      "item": "ic2:stabilized_machine_casing",
+      "item": "ic2:stabilized_machine_block",
       "size": 1,
       "type": "ic2:item",
       "letter": "C"

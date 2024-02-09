@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/spectral_macerator/side",
+  "active_down": "ie:block/spectral_macerator/side",
+  "active_up": "ie:block/spectral_macerator/side",
+  "active_west": "ie:block/spectral_macerator/side",
+  "active_east": "ie:block/spectral_macerator/side",
+  "active_south": "ie:block/spectral_macerator/active_main",
+
+  "inactive_north": "ie:block/spectral_macerator/side",
+  "inactive_down": "ie:block/spectral_macerator/side",
+  "inactive_up": "ie:block/spectral_macerator/side",
+  "inactive_west": "ie:block/spectral_macerator/side",
+  "inactive_east": "ie:block/spectral_macerator/side",
+  "inactive_south": "ie:block/spectral_macerator/inactive_main"
+}

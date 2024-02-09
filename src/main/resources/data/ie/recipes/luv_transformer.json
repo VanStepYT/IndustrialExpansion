@@ -12,7 +12,7 @@
   "height": 3,
   "inputs": [
     {
-      "item": "ic2:advanced_alloy",
+      "item": "ic2:plate_advanced_alloy",
       "size": 1,
       "type": "ic2:item",
       "letter": "A"

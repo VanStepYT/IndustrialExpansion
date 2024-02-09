@@ -34,7 +34,7 @@ public class SpectralCable extends CableTileEntity {
     }
 
     public BlockEntityType<?> createType() {
-        return ModBlocks.SPECTRAL_CABLE_TYPE;
+        return ModBlocks.PHOTON_CABLE_TYPE;
     }
 
 }

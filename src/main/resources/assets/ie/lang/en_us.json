@@ -3,6 +3,15 @@
   "item.ie.raw_highly_advanced_alloy": "Raw Highly Advanced Alloy",
   "item.ie.highly_advanced_alloy": "Highly Advanced Alloy",
   "item.ie.utec": "UTEC",
+  "item.ie.spectral_overclocker_upgrade": "Spectral Overclocker Upgrade",
+
+  "item.ie.spectral_circuit": "Spectral Circuit",
+  "item.ie.quantum_circuit": "Quantum Circuit",
+  "item.ie.nano_circuit": "Nano Circuit",
+
+  "item.ie.spectralium": "Spectralium",
+  "item.ie.spectral_plate": "Spectral Plate",
+  "item.ie.spectral_crafting_component": "Spectral Crafting Component",
 
   "tooltip.item.ie.multi_mode.normal": "Mode: 1x1",
   "tooltip.item.ie.multi_mode.big": "Mode: 3x3",
@@ -21,14 +30,24 @@
   "block.ie.quantum_quarry": "Quantum Quarry",
   "block.ie.nano_machine_casing": "Nano Machine Casing",
   "block.ie.quantum_machine_casing": "Quantum Machine Casing",
+  "block.ie.spectral_machine_casing": "Spectral Machine Casing",
+
+
   "block.ie.iridium_fabricator": "Iridium Fabricator",
+  "block.ie.spectralium_fabricator": "Spectralium Fabricator",
+
+  "block.ie.spectral_macerator": "Spectral Macerator",
+  "block.ie.spectral_compressor": "Spectral Compressor",
+  "block.ie.spectral_furnace": "Spectral Furnace",
 
   "block.ie.advanced_lv_panel": "Advanced LV Solar Panel",
   "block.ie.advanced_mv_panel": "Advanced MV Solar Panel",
   "block.ie.advanced_hv_panel": "Advanced HV Solar Panel",
   "block.ie.advanced_ev_panel": "Advanced EV Solar Panel",
   "block.ie.advanced_luv_panel": "Advanced LuV Solar Panel",
+  "block.ie.advanced_uv_panel": "Advanced UV Solar Panel",
   "block.ie.utesu": "UTESU",
+  "block.ie.hutesu": "HUTESU",
   "block.ie.uv_transformer": "UV Transformer",
 
   "ie:gui.progress": "Progress:"

@@ -30,7 +30,7 @@
       "letter": "C"
     },
     {
-      "item": "ie:nano_machine_block",
+      "item": "ie:nano_machine_casing",
       "size": 1,
       "type": "ic2:item",
       "letter": "D"

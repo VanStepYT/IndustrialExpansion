@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/hutesu/side",
+  "down": "ie:block/hutesu/side",
+  "up": "ie:block/hutesu/side",
+  "west": "ie:block/hutesu/side",
+  "east": "ie:block/hutesu/side",
+  "south": "ie:block/hutesu/south"
+}
