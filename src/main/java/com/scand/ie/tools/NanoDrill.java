@@ -39,7 +39,7 @@ import java.util.Iterator;
 
 public class NanoDrill extends DrillTool implements IMultiTargetTool {
     public NanoDrill() {
-        super("nano_drill", 4, 40, 120f);
+        super("nano_drill", 4, 40, 540f);
         this.tier = 4;
         this.capacity = 35000;
     }
@@ -51,7 +51,7 @@ public class NanoDrill extends DrillTool implements IMultiTargetTool {
         if (!ElectricItem.MANAGER.canUse(stack, this.getEnergyCost(stack))) {
             return 1.0F;
         } else if (this.isCorrectToolForDrops(stack, state)) {
-            return 120.0F;
+            return 540f;
         } else {
             return 1.0F;
         }

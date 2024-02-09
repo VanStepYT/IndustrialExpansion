@@ -4,9 +4,24 @@
   "item.ie.highly_advanced_alloy": "Highly Advanced Alloy",
   "item.ie.utec": "UTEC",
 
+  "tooltip.item.ie.multi_mode.normal": "Mode: 1x1",
+  "tooltip.item.ie.multi_mode.big": "Mode: 3x3",
+  "tooltip.item.ie.multi_mode.advbig": "Mode: 5x5",
+  "tooltip.item.ie.multi_mode.superbig": "Mode: 7x7",
+
+  "item.ie.quantum_drill": "Quantum Drill",
+  "item.ie.nano_drill": "Nano Drill",
+  "item.ie.spectral_drill": "Spectral Drill",
+
+  "item.ie.spectral_suit_chestplate": "Spectral Suit BodyArmor",
+  "item.ie.spectral_suit_leggings": "Spectral Suit Leggings",
+  "item.ie.spectral_suit_helmet": "Spectral Suit Helmet",
+  "item.ie.spectral_suit_boots": "Spectral Suit Boots",
+
   "block.ie.quantum_quarry": "Quantum Quarry",
   "block.ie.nano_machine_casing": "Nano Machine Casing",
   "block.ie.quantum_machine_casing": "Quantum Machine Casing",
+  "block.ie.iridium_fabricator": "Iridium Fabricator",
 
   "block.ie.advanced_lv_panel": "Advanced LV Solar Panel",
   "block.ie.advanced_mv_panel": "Advanced MV Solar Panel",
@@ -14,5 +29,7 @@
   "block.ie.advanced_ev_panel": "Advanced EV Solar Panel",
   "block.ie.advanced_luv_panel": "Advanced LuV Solar Panel",
   "block.ie.utesu": "UTESU",
-  "block.ie.uv_transformer": "UV Transformer"
+  "block.ie.uv_transformer": "UV Transformer",
+
+  "ie:gui.progress": "Progress:"
 }

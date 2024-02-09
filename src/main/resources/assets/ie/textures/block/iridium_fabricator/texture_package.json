@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/iridium_fabricator/side",
+	"down": "ie:block/iridium_fabricator/side",
+	"up": "ie:block/iridium_fabricator/side",
+	"west": "ie:block/iridium_fabricator/side",
+	"east": "ie:block/iridium_fabricator/side",
+	"south": "ie:block/iridium_fabricator/front"
+}

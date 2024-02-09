@@ -3,6 +3,7 @@ package com.scand.ie.tools;
 import com.scand.ie.IEMod;
 import ic2.api.items.electric.ElectricItem;
 import ic2.core.IC2;
+import ic2.core.block.machines.tiles.hv.MassFabricatorTileEntity;
 import ic2.core.item.base.features.IMultiTargetTool;
 import ic2.core.item.tool.electric.DrillTool;
 import ic2.core.platform.rendering.IC2Textures;
@@ -29,17 +30,19 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.level.BlockEvent;
 
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
 import java.util.Iterator;
 
-public class QuantumDrill extends DrillTool implements IMultiTargetTool {
-    public QuantumDrill() {
-        super("quantum_drill", 4, 40, 540f);
+public class SpectralDrill extends DrillTool implements IMultiTargetTool {
+    public SpectralDrill() {
+        super("spectral_drill", 4, 20, 540f);
         this.tier = 4;
-        this.capacity = 100000;
+        this.capacity = 1000000;
     }
     @OnlyIn(Dist.CLIENT)
     public TextureAtlasSprite getTexture() {
-        return IC2Textures.getMappedEntriesItem(IEMod.MOD_ID, "tools/drill").get("quantum");
+        return IC2Textures.getMappedEntriesItem(IEMod.MOD_ID, "tools/drill").get("spectral");
     }
     public float getDestroySpeed(ItemStack stack, BlockState state) {
         if (!ElectricItem.MANAGER.canUse(stack, this.getEnergyCost(stack))) {
@@ -52,12 +55,11 @@ public class QuantumDrill extends DrillTool implements IMultiTargetTool {
     }
 
     public boolean onBlockStartBreak(ItemStack stack, BlockPos pos, Player player) {
-        if ((this.isMultiMining(stack)||this.isAdvancedMultiMining(stack)) && this.canMultiMine(stack)) {
+        if ((this.isMultiMining(stack)||this.isAdvancedMultiMining(stack)||this.isSuperMultiMining(stack)) && this.canMultiMine(stack)) {
             Level world = player.level;
             BlockHitResult ray = getPlayerPOVHitResult(world, player, ClipContext.Fluid.NONE);
             int removed = 0;
-            int getOffset = isAdvancedMultiMining(stack) ? 2 : 1;
-            Iterator offsets = IterableWrapper.wrap(this.getHitPositions(stack, player, pos, ray.getDirection(), getOffset)).iterator();
+            Iterator offsets = IterableWrapper.wrap(this.getHitPositions(stack, player, pos, ray.getDirection())).iterator();
             while(offsets.hasNext()) {
                 BlockPos offset = (BlockPos)offsets.next();
                 BlockState state = world.getBlockState(offset);
@@ -95,36 +97,47 @@ public class QuantumDrill extends DrillTool implements IMultiTargetTool {
             CompoundTag data = stack.getOrCreateTag();
             boolean multiE = data.getBoolean("multi");
             boolean advE = data.getBoolean("advmulti");
+            boolean superE = data.getBoolean("supermulti");
 
             boolean multi = multiE;
             boolean adv = advE;
+            boolean supra = superE;
             int mode = 0;
 
             if(multiE){
                 multi = false;
                 adv = true;
+                supra = false;
                 mode = 2;
             }
             else if (advE){
                 multi = false;
                 adv = false;
+                supra = true;
+                mode = 3;
+            }
+            else if (superE){
+                multi = false;
+                adv = false;
+                supra = false;
                 mode = 0;
             }
             else{
                 multi = true;
                 adv = false;
+                supra = false;
                 mode = 1;
             }
 
             data.putBoolean("multi", multi);
             data.putBoolean("advmulti", adv);
+            data.putBoolean("supermulti", supra);
             if (IC2.PLATFORM.isSimulating()) {
-                playerIn.displayClientMessage(this.translate(multi ? "tooltip.item.ic2.multi_mine.enable" : "tooltip.item.ic2.multi_mine.disable"), false);
                 switch (mode){
                     case 0 -> playerIn.displayClientMessage(this.translate("tooltip.item.ie.multi_mode.normal"), false);
                     case 1 -> playerIn.displayClientMessage(this.translate("tooltip.item.ie.multi_mode.big"), false);
                     case 2 -> playerIn.displayClientMessage(this.translate("tooltip.item.ie.multi_mode.advbig"), false);
-
+                    case 3 -> playerIn.displayClientMessage(this.translate("tooltip.item.ie.multi_mode.superbig"), false);
                 }
             }
 
@@ -140,12 +153,13 @@ public class QuantumDrill extends DrillTool implements IMultiTargetTool {
 
     @Override
     public Iterator<BlockPos> getHitPositions(ItemStack itemStack, Player player, BlockPos blockPos, Direction direction) {
-        int getOffset = isAdvancedMultiMining(itemStack) ? 2 : 1;
-        return getHitPositions(itemStack,player,blockPos,direction,getOffset);
-    }
+        int expand = 0;
+        if(this.isMultiMining(itemStack)){expand=1;}
+        if(this.isAdvancedMultiMining(itemStack)){expand=2;}
+        if(this.isSuperMultiMining(itemStack)){expand=3;}
+        IEMod.LOGGER.info("setting expanding for: "+String.valueOf(expand));
 
-    public boolean canAdvancedMultiMine(ItemStack stack) {
-        return ElectricItem.MANAGER.canUse(stack, this.getEnergyCost(stack));
+        return getHitPositions(itemStack,player,blockPos,direction,expand);
     }
 
     public boolean isMultiMining(ItemStack stack) {
@@ -155,8 +169,24 @@ public class QuantumDrill extends DrillTool implements IMultiTargetTool {
         return StackUtil.getNbtData(stack).getBoolean("advmulti");
     }
 
+    public boolean isSuperMultiMining(ItemStack stack) {
+        IEMod.LOGGER.info("The nbt tag is: "+String.valueOf(StackUtil.getNbtData(stack).getBoolean("supermulti")));
+        return StackUtil.getNbtData(stack).getBoolean("supermulti");
+    }
+
     public Iterator<BlockPos> getHitPositions(ItemStack stack, Player player, BlockPos pos, Direction dir, int expanding) {
-        BlockPos Apos = pos.above(this.isAdvancedMultiMining(stack) && !(dir == Direction.UP || dir == Direction.DOWN)  ? 1:0);
-        return Box.fromPos(Apos, true).expandSide(dir.getAxis(), expanding).iterator();
+        BlockPos aPos = pos;
+        if(dir != Direction.UP && dir != Direction.DOWN) {
+            if (this.isAdvancedMultiMining(stack)) {
+                aPos = aPos.above(1);
+            }
+            if (this.isSuperMultiMining(stack)) {
+                aPos = aPos.above(2);
+            }
+        }
+
+        IEMod.LOGGER.info("expanding for: "+String.valueOf(expanding));
+
+        return Box.fromPos(aPos, true).expandSide(dir.getAxis(), expanding).iterator();
     }
 }

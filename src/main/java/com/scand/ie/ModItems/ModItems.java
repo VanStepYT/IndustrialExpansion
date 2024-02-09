@@ -4,6 +4,8 @@ import com.scand.ie.IEMod;
 import com.scand.ie.armor.SpectralArmorItem;
 import com.scand.ie.block.ModBlocks;
 import com.scand.ie.tools.NanoDrill;
+import com.scand.ie.tools.QuantumDrill;
+import com.scand.ie.tools.SpectralDrill;
 import ic2.core.block.base.misc.color.IColorListener;
 import ic2.core.item.block.CableItem;
 import ic2.core.item.wearable.armor.electric.QuantumSuit;
@@ -50,6 +52,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> NANO_DRILL = ITEMS.register("nano_drill",
             NanoDrill::new);
+    public static final RegistryObject<Item> QUANTUM_DRILL = ITEMS.register("quantum_drill",
+            QuantumDrill::new);
+
+    public static final RegistryObject<Item> SPECTRAL_DRILL = ITEMS.register("spectral_drill",
+            SpectralDrill::new);
 
 
 

@@ -2,15 +2,19 @@ package com.scand.ie.block;
 
 import com.scand.ie.IEMod;
 import com.scand.ie.ModItems.ModItems;
+import com.scand.ie.block.custom.IridiumFabricatorTile;
 import com.scand.ie.block.entity.*;
 import ic2.core.block.base.IAutoCreator;
 import ic2.core.block.base.IToolProvider;
+import ic2.core.block.base.drops.IBlockDropProvider;
 import ic2.core.block.base.misc.color.IColorListener;
 import ic2.core.block.cables.CableTileEntity;
 import ic2.core.block.cables.Cables;
+import ic2.core.block.machines.BaseMachineBlock;
 import ic2.core.platform.registries.IC2Blocks;
 import ic2.core.platform.registries.IC2Items;
 import ic2.core.platform.registries.IC2Tiles;
+import ic2.core.platform.rendering.features.ITextureProvider;
 import ic2.core.utils.plugins.IRegistryProvider;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,10 +41,15 @@ public class ModBlocks {
     public static final BlockEntityType<AdvancedHVPanelTile> ADVANCED_HV_PANEL_TYPE = IC2Tiles.createTile("advanced_hv_solar_panel", AdvancedHVPanelTile::new);
     public static final BlockEntityType<AdvancedEVPanelTile> ADVANCED_EV_PANEL_TYPE = IC2Tiles.createTile("advanced_ev_solar_panel", AdvancedEVPanelTile::new);
     public static final BlockEntityType<AdvancedLUVPanelTile> ADVANCED_LUV_PANEL_TYPE = IC2Tiles.createTile("advanced_luv_solar_panel", AdvancedLUVPanelTile::new);
+    public static final BlockEntityType<IridiumFabricatorTile> IRIDIUM_FABRICATOR_TYPE = IC2Tiles.createTile("iridium_fabricator", IridiumFabricatorTile::new);
     public static final BlockEntityType<SpectralCable> SPECTRAL_CABLE_TYPE = IC2Tiles.createTile("spectral_cable", SpectralCable::new);
     public static final RegistryObject<Block> QUANTUM_QUARRY = registerBlock("quantum_quarry",
             () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),
             CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> IRIDIUM_FABRICATOR = registerBlock("iridium_fabricator",
+            () -> new BaseMachineBlock("iridium_fabricator", IBlockDropProvider.SELF_OR_ADV_MACHINE, ITextureProvider.noState(IEMod.MOD_ID,
+                    "iridium_fabricator"),IRIDIUM_FABRICATOR_TYPE),CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> NANO_MACHINE_CASING = registerBlock("nano_machine_casing",
             () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(10f).requiresCorrectToolForDrops()),

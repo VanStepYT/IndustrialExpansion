@@ -1,4 +1,5 @@
 {
 	"nano": "ie:item/tools/drill/nano",
-	"quantum": "ie:item/tools/drill/quantum"
+	"quantum": "ie:item/tools/drill/quantum",
+	"spectral": "ie:item/tools/drill/spectral"
 }
