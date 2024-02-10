@@ -30,7 +30,7 @@
       "letter": "C"
     },
     {
-      "item": "ic2:lapatron_crystal",
+      "item": "ic2:pesd",
       "size": 2,
       "type": "ic2:item",
       "letter": "D"
@@ -42,7 +42,7 @@
       "letter": "E"
     },
     {
-      "item": "ic2:diamond_drill",
+      "item": "ie:quantum_drill",
       "size": 2,
       "type": "ic2:item",
       "letter": "F"
