@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 public class HUTESUTile extends BaseEnergyStorageTileEntity {
 
     public HUTESUTile(BlockPos pos, BlockState state) {
-        super(pos, state, 8, 524288, 2147483647);
+        super(pos, state, 8, 524288, (int) Math.pow(10,10));
     }
     @Override
     public int getGuiOffset() {

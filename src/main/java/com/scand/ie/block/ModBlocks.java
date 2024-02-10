@@ -4,6 +4,7 @@ import com.scand.ie.IEMod;
 import com.scand.ie.ModItems.ModItems;
 import com.scand.ie.block.custom.IridiumFabricatorTile;
 import com.scand.ie.block.custom.SpectraliumFabricatorTile;
+import com.scand.ie.block.custom.cable.PhotonCableClass;
 import com.scand.ie.block.custom.cable.PhotonCableTile;
 import com.scand.ie.block.custom.machines.SpectralCompressor;
 import com.scand.ie.block.custom.machines.SpectralFurnace;
@@ -18,6 +19,7 @@ import ic2.core.block.cables.CableTileEntity;
 import ic2.core.block.cables.Cables;
 import ic2.core.block.machines.BaseMachineBlock;
 import ic2.core.platform.registries.IC2Blocks;
+import ic2.core.platform.registries.IC2Items;
 import ic2.core.platform.registries.IC2Tiles;
 import ic2.core.platform.rendering.IC2Models;
 import ic2.core.platform.rendering.features.ITextureProvider;
@@ -25,6 +27,7 @@ import ic2.core.utils.plugins.IRegistryProvider;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -39,6 +42,10 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, IEMod.MOD_ID);
+
+    public static ItemStack getPhotonDrop(int insulation) {
+        return new ItemStack(ModBlocks.PHOTON_CABLE.get());
+    }
 
     public static final BlockEntityType<AdvancedLVPanelTile> ADVANCED_LV_PANEL_TYPE = IC2Tiles.createTile("advanced_lv_solar_panel", AdvancedLVPanelTile::new);
     public static final BlockEntityType<AdvancedMVPanelTile> ADVANCED_MV_PANEL_TYPE = IC2Tiles.createTile("advanced_mv_solar_panel", AdvancedMVPanelTile::new);
@@ -133,15 +140,12 @@ public class ModBlocks {
             CreativeModeTab.TAB_MISC);
 
     public static final  CableBlock.CableInstance PHOTON_CABLE_INSTANCE = new
-            CableBlock.CableInstance(false,false,false,0, new float[]{2.0F},
-            "electric/cable", Cables::getPlasmaDrop).addTextures(new String[]{"photon"});
+            PhotonCableClass.CableInstance(false,false,false,0, new float[]{3.0F},
+            "electric/cable", ModBlocks::getPhotonDrop).addTextures(new String[]{"photon"});
     //public static final Block PHOTON_CABLE = registerBlock(CableBlock.createBlock("photon_cable", PHOTON_CABLE_INSTANCE, PHOTON_CABLE_TYPE));
 
     public static final RegistryObject<Block> PHOTON_CABLE = registerBlock("photon_cable",
-            ()->CableBlock.createBlock("photon_cable",
-                    new CableBlock.CableInstance(false,false,false,0, new float[]{2.0F},
-                            "electric/cable", Cables::getPlasmaDrop).addTextures("photon"),
-                    PHOTON_CABLE_TYPE),
+            ()-> PhotonCableClass.createBlock("photon_cable",PHOTON_CABLE_INSTANCE,PHOTON_CABLE_TYPE),
             CreativeModeTab.TAB_MISC);
 
     public static <T extends Block & IRegistryProvider> T registerBlock(T block) {
@@ -177,18 +181,16 @@ public class ModBlocks {
         return toReturn;
     }
 
+    private static <T extends Block>RegistryObject<T>
+    registerAnonimusBlock(String name, Supplier<T> block, CreativeModeTab tab){
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        return toReturn;
+    }
+
     private static <T extends Block>
     RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab){
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().tab(tab)));
-    }
-
-    public static CableBlock createBlock(String name, final CableBlock.CableInstance cable, BlockEntityType<? extends CableTileEntity> creator) {
-        return new CableBlock(name, creator) {
-            public CableInstance createInstance() {
-                return cable;
-            }
-        };
     }
 
     public static void register(IEventBus eventBus){

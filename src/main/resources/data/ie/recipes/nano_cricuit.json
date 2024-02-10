@@ -3,7 +3,7 @@
   "sub_type": "ic2:shaped",
   "enabled": true,
   "output": {
-    "item": "ie:spectral_machine_casing",
+    "item": "ie:nano_circuit",
     "count": 1
   },
   "hidden": false,
@@ -12,25 +12,25 @@
   "height": 3,
   "inputs": [
     {
-      "item": "ie:spectralium",
+      "item": "ic2:glassfiber_cable_item",
       "size": 1,
       "type": "ic2:item",
       "letter": "A"
     },
     {
-      "item": "ie:spectral_plate",
+      "item": "ic2:carbon_plate",
       "size": 1,
       "type": "ic2:item",
       "letter": "B"
     },
     {
-      "item": "ie:spectral_crafting_component",
+      "item": "ic2:carbon_box",
       "size": 1,
       "type": "ic2:item",
       "letter": "C"
     },
     {
-      "item": "ie:quantum_machine_casing",
+      "item": "ic2:complex_circuit",
       "size": 1,
       "type": "ic2:item",
       "letter": "D"

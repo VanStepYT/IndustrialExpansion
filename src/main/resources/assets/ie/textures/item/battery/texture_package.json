@@ -1,0 +1,13 @@
+{
+	"spectral_0": "ie:item/battery/spectral_1",
+	"spectral_1": "ie:item/battery/spectral_2",
+	"spectral_2": "ie:item/battery/spectral_3",
+	"spectral_3": "ie:item/battery/spectral_4",
+	"spectral_4": "ie:item/battery/spectral_5",
+
+	"singularity_0": "ie:item/battery/singularity_0",
+	"singularity_1": "ie:item/battery/singularity_1",
+	"singularity_2": "ie:item/battery/singularity_2",
+	"singularity_3": "ie:item/battery/singularity_3",
+	"singularity_4": "ie:item/battery/singularity_4"
+}

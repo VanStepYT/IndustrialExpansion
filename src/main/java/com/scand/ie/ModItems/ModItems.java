@@ -1,6 +1,7 @@
 package com.scand.ie.ModItems;
 
 import com.scand.ie.IEMod;
+import com.scand.ie.ModItems.custom.FlyModule;
 import com.scand.ie.ModItems.custom.SpectralOverclockerUpgrade;
 import com.scand.ie.armor.SpectralArmorItem;
 import com.scand.ie.block.ModBlocks;
@@ -9,9 +10,11 @@ import com.scand.ie.tools.QuantumDrill;
 import com.scand.ie.tools.SpectralDrill;
 import ic2.core.block.base.misc.color.IColorListener;
 import ic2.core.item.block.CableItem;
+import ic2.core.item.misc.BatteryItem;
 import ic2.core.item.wearable.armor.electric.QuantumSuit;
 import ic2.core.item.wearable.base.IC2ModularElectricArmor;
 import ic2.core.platform.registries.IC2Blocks;
+import ic2.core.platform.registries.IC2Items;
 import ic2.core.utils.plugins.IRegistryProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -23,6 +26,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.w3c.dom.ls.LSParserFilter;
 
 import static ic2.core.platform.registries.IC2Items.COLORABLE;
 
@@ -73,13 +77,24 @@ public class ModItems {
     public static final RegistryObject<Item> SPECTRAL_DRILL = ITEMS.register("spectral_drill",
             SpectralDrill::new);
 
+    public static final RegistryObject<Item> FLY_MODULE = ITEMS.register("fly_module",
+            ()->new FlyModule("armor/modules","fly"));
+
+    public static final RegistryObject<Item> SPECTRAL_CRYSTAL = ITEMS.register("spectral_crystal",
+            ()->new BatteryItem("spectral_crystal",100000000, 95000, 5, true,
+                    "spectral", true, 100000));
+
+    public static final RegistryObject<Item> SINGULARITY_CRYSTAL = ITEMS.register("singularity_crystal",
+            ()->new BatteryItem("singularity_crystal",1000000000, 950000, 6, true,
+                    "singularity", true, 10000000));
+
+
 
 
 
     public static Item SPECTRAL_CABLE;
     private static void registerSomeCables(){
         //SPECTRAL_CABLE = registerItem(new CableItem("spectral_cable", ModBlocks.SPECTRAL_CABLE.defaultBlockState(), "spectral"));
-
     }
 
     public static <T extends Item> T registerItem(T item, ResourceLocation id) {

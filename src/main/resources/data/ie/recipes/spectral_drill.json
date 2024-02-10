@@ -3,7 +3,7 @@
   "sub_type": "ic2:shaped",
   "enabled": true,
   "output": {
-    "item": "ie:spectral_machine_casing",
+    "item": "ie:spectral_drill",
     "count": 1
   },
   "hidden": false,
@@ -12,25 +12,25 @@
   "height": 3,
   "inputs": [
     {
-      "item": "ie:spectralium",
+      "item": "ie:spectral_plate",
       "size": 1,
       "type": "ic2:item",
       "letter": "A"
     },
     {
-      "item": "ie:spectral_plate",
+      "item": "ie:spectral_circuit",
       "size": 1,
       "type": "ic2:item",
       "letter": "B"
     },
     {
-      "item": "ie:spectral_crafting_component",
+      "item": "ie:quantum_drill",
       "size": 1,
       "type": "ic2:item",
       "letter": "C"
     },
     {
-      "item": "ie:quantum_machine_casing",
+      "item": "ie:spectral_crafting_component",
       "size": 1,
       "type": "ic2:item",
       "letter": "D"
@@ -38,7 +38,7 @@
   ],
   "pattern": [
     "ABA",
-    "CDC",
-    "ABA"
+    "BCB",
+    "ADA"
   ]
 }

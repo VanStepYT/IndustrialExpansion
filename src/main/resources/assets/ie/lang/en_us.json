@@ -13,6 +13,10 @@
   "item.ie.spectral_plate": "Spectral Plate",
   "item.ie.spectral_crafting_component": "Spectral Crafting Component",
 
+  "item.ie.spectral_crystal": "Spectral Crystal",
+  "item.ie.singularity_crystal": "Singularity Crystal",
+  "item.ie.fly_module": "Flight Module",
+
   "tooltip.item.ie.multi_mode.normal": "Mode: 1x1",
   "tooltip.item.ie.multi_mode.big": "Mode: 3x3",
   "tooltip.item.ie.multi_mode.advbig": "Mode: 5x5",
@@ -31,6 +35,7 @@
   "block.ie.nano_machine_casing": "Nano Machine Casing",
   "block.ie.quantum_machine_casing": "Quantum Machine Casing",
   "block.ie.spectral_machine_casing": "Spectral Machine Casing",
+  "block.ie.photon_cable": "Photon Cable",
 
 
   "block.ie.iridium_fabricator": "Iridium Fabricator",

@@ -1,5 +1,6 @@
 package com.scand.ie.armor;
 
+import com.scand.ie.ModItems.ModItems;
 import ic2.api.events.ArmorSlotEvent;
 import ic2.api.items.armor.IArmorModule;
 import ic2.core.item.base.PropertiesBuilder;
@@ -31,6 +32,7 @@ public class SpectralArmorItem extends IC2ModularElectricArmor {
                 this.addSlotType(IArmorModule.ModuleType.GENERIC, 2);
                 this.addSlotType(IArmorModule.ModuleType.STORAGE, 3);
                 this.addSlotType(IArmorModule.ModuleType.BACK_SLOT, 2);
+                this.addSlotType(IArmorModule.ModuleType.MOVEMENT, 2);
                 break;
             case FEET:
                 this.addSlotType(IArmorModule.ModuleType.GENERIC, 2);
@@ -51,10 +53,14 @@ public class SpectralArmorItem extends IC2ModularElectricArmor {
     public ItemStack createDefaultArmor() {
         ItemStack stack = new ItemStack(this);
         Map<IArmorModule.ModuleType, List<ItemStack>> types = CollectionUtils.createLinkedMap();
-        types.put(IArmorModule.ModuleType.BATTERY, ObjectArrayList.wrap(new ItemStack[]{new ItemStack(IC2Items.GLOWTRONIC_CRYSTAL)}));
+        types.put(IArmorModule.ModuleType.BATTERY, ObjectArrayList.wrap(new ItemStack[]{new ItemStack(ModItems.SPECTRAL_CRYSTAL.get())}));
         switch (this.slot) {
             case CHEST:
-                types.put(IArmorModule.ModuleType.GENERIC, ObjectArrayList.wrap(new ItemStack[]{new ItemStack(IC2Items.EXTINGUISHING_MODULE),new ItemStack(IC2Items.PROTECTION_MODULE)}));
+                types.put(IArmorModule.ModuleType.GENERIC, ObjectArrayList.wrap(new ItemStack[]{
+                        new ItemStack(IC2Items.EXTINGUISHING_MODULE),new ItemStack(IC2Items.PROTECTION_MODULE),
+                        }));
+                types.put(IArmorModule.ModuleType.MOVEMENT, ObjectArrayList.wrap(new ItemStack[]{
+                            new ItemStack(ModItems.FLY_MODULE.get())}));
                 break;
             case FEET:
                 types.put(IArmorModule.ModuleType.MOVEMENT, ObjectArrayList.wrap(new ItemStack[]{new ItemStack(IC2Items.JUMP_BOOST_MODULE)}));

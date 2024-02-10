@@ -3,7 +3,7 @@
   "sub_type": "ic2:shaped",
   "enabled": true,
   "output": {
-    "item": "ie:spectral_machine_casing",
+    "item": "ie:advanced_uv_panel",
     "count": 1
   },
   "hidden": false,
@@ -12,33 +12,45 @@
   "height": 3,
   "inputs": [
     {
-      "item": "ie:spectralium",
+      "item": "ie:spectral_plate",
       "size": 1,
       "type": "ic2:item",
       "letter": "A"
     },
     {
-      "item": "ie:spectral_plate",
+      "item": "ie:spectralium",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "F"
+    },
+    {
+      "item": "ie:spectral_crystal",
       "size": 1,
       "type": "ic2:item",
       "letter": "B"
     },
     {
-      "item": "ie:spectral_crafting_component",
+      "item": "ie:spectral_machine_casing",
       "size": 1,
       "type": "ic2:item",
       "letter": "C"
     },
     {
-      "item": "ie:quantum_machine_casing",
+      "item": "ie:advanced_luv_panel",
       "size": 1,
       "type": "ic2:item",
       "letter": "D"
+    },
+    {
+      "item": "ie:utesu",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "E"
     }
   ],
   "pattern": [
-    "ABA",
+    "FBF",
     "CDC",
-    "ABA"
+    "AEA"
   ]
 }

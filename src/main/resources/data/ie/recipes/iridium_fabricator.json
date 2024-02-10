@@ -3,7 +3,7 @@
   "sub_type": "ic2:shaped",
   "enabled": true,
   "output": {
-    "item": "ie:spectral_machine_casing",
+    "item": "ie:iridium_fabricator",
     "count": 1
   },
   "hidden": false,
@@ -12,33 +12,27 @@
   "height": 3,
   "inputs": [
     {
-      "item": "ie:spectralium",
+      "item": "ic2:ore_iridium",
       "size": 1,
       "type": "ic2:item",
       "letter": "A"
     },
     {
-      "item": "ie:spectral_plate",
+      "item": "ie:quantum_machine_casing",
       "size": 1,
       "type": "ic2:item",
       "letter": "B"
     },
     {
-      "item": "ie:spectral_crafting_component",
+      "item": "ic2:mass_fabricator",
       "size": 1,
       "type": "ic2:item",
       "letter": "C"
-    },
-    {
-      "item": "ie:quantum_machine_casing",
-      "size": 1,
-      "type": "ic2:item",
-      "letter": "D"
     }
   ],
   "pattern": [
-    "ABA",
-    "CDC",
-    "ABA"
+    "AAA",
+    "BCB",
+    "AAA"
   ]
 }

@@ -1,0 +1,20 @@
+{
+	"input": {
+		"item": {
+			"item": "ie:spectral_plate",
+			"count": 1
+		},
+		"size": 1,
+		"type": "ic2:nbtstack"
+	},
+	"output": {
+		"xp": 0.0,
+		"outputs": [
+			{
+				"item": "ie:photon_cable",
+				"count": 1
+			}
+		],
+		"type": "ic2:simple"
+	}
+}
