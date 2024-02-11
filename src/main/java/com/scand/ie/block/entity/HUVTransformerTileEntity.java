@@ -7,15 +7,15 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class UVTransformerTileEntity extends BaseTransformerTileEntity {
+public class HUVTransformerTileEntity extends BaseTransformerTileEntity {
 
-    public UVTransformerTileEntity(BlockPos pos, BlockState state) {
-        super(pos, state, 32768, 131072, 131072);
+    public HUVTransformerTileEntity(BlockPos pos, BlockState state) {
+        super(pos, state, 131072, 524288, 524288);
     }
 
     @Override
     public BlockEntityType<?> createType() {
-        return ModBlocks.UVTRANSFORMER_TYPE;
+        return ModBlocks.HUVTRANSFORMER_TYPE;
     }
 
     @Override

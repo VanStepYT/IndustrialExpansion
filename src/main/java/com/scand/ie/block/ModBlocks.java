@@ -31,6 +31,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -125,8 +126,21 @@ public class ModBlocks {
 
 
     public static BlockEntityType<UVTransformerTileEntity> UVTRANSFORMER_TYPE = IC2Tiles.createTile("uv_transformer", UVTransformerTileEntity::new);
+    public static BlockEntityType<HUVTransformerTileEntity> HUVTRANSFORMER_TYPE = IC2Tiles.createTile("huv_transformer", HUVTransformerTileEntity::new);
+    public static BlockEntityType<AdvancedAdjustableTransformer> ADVANCED_ADJUSTABLE_TRANSFORMER_TYPE =
+            IC2Tiles.createTile("advanced_adjustable_transformer", AdvancedAdjustableTransformer::new);
     public static final RegistryObject<Block> UV_TRANSFORMER = registerBlock("uv_transformer",
             () -> new UVTransformerBlock("uv_transformer", UVTRANSFORMER_TYPE),
+            CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> HUV_TRANSFORMER = registerBlock("huv_transformer",
+            () -> new UVTransformerBlock("huv_transformer", HUVTRANSFORMER_TYPE),
+            CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> ADVANCED_ADJUSTABLE_TRANSFORMER =
+            registerBlock("advanced_adjustable_transformer",
+            () -> new AdvancedAdjustableTransformerBlock(
+                    "advanced_adjustable_transformer",
+                    ADVANCED_ADJUSTABLE_TRANSFORMER_TYPE),
             CreativeModeTab.TAB_MISC);
     public static final BlockEntityType<UTESUTile> UTESU_TILE_TYPE = IC2Tiles.createTile("utesu", UTESUTile::new);
     public static final BlockEntityType<HUTESUTile> HUTESU_TILE_TYPE = IC2Tiles.createTile("hutesu", HUTESUTile::new);
@@ -147,32 +161,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> PHOTON_CABLE = registerBlock("photon_cable",
             ()-> PhotonCableClass.createBlock("photon_cable",PHOTON_CABLE_INSTANCE,PHOTON_CABLE_TYPE),
             CreativeModeTab.TAB_MISC);
-
-    public static <T extends Block & IRegistryProvider> T registerBlock(T block) {
-        ForgeRegistries.BLOCKS.register((block).getRegistryName(), block);
-        if (block instanceof IAutoCreator creator) {
-            Item item = creator.createItem();
-            if (item != null) {
-                if (item instanceof IRegistryProvider) {
-                    IRegistryProvider registry = (IRegistryProvider)item;
-                    ModItems.registerItem(item, registry.getRegistryName());
-                } else {
-                    ModItems.registerItem(item, ((IRegistryProvider)block).getRegistryName());
-                }
-            }
-        }
-        if (block instanceof IToolProvider provider) {
-            provider.registerTools();
-        }
-
-        if (block instanceof IColorListener listener) {
-            if (listener.needsColoring()) {
-                IC2Blocks.COLORABLE.add(block);
-            }
-        }
-
-        return block;
-    }
 
     private static <T extends Block>RegistryObject<T>
     registerBlock(String name, Supplier<T> block, CreativeModeTab tab){

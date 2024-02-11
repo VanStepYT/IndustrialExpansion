@@ -7,6 +7,7 @@ import ic2.core.block.base.features.ITickListener;
 import ic2.core.block.base.features.ITileActivityProvider;
 import ic2.core.block.base.features.IWrenchableTile;
 import ic2.core.block.base.tiles.impls.BaseGeneratorTileEntity;
+import ic2.core.block.storage.tiles.storage.ESUTileEntity;
 import ic2.core.inventory.container.IC2Container;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,7 +23,7 @@ public class AdvancedEVPanelTile extends BaseGeneratorTileEntity implements ITic
 
     public AdvancedEVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.tier = 4;
+        this.tier = 5;
         this.production = 8192;
         this.lowerProduction = 4096;
         this.maxStorage = 131072;
@@ -71,7 +72,7 @@ public class AdvancedEVPanelTile extends BaseGeneratorTileEntity implements ITic
 
     @Override
     public BlockEntityType<?> createType() {
-        return ModBlocks.ADVANCED_LV_PANEL_TYPE;
+        return ModBlocks.ADVANCED_EV_PANEL_TYPE;
     }
 
     @Override

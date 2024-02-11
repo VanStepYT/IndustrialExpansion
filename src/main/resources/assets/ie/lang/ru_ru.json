@@ -1,0 +1,61 @@
+{
+  "item.ie.moon_matter": "Лунная Материя",
+  "item.ie.raw_highly_advanced_alloy": "Неготовый Сверх-Продвинутый Сплав",
+  "item.ie.highly_advanced_alloy": "Сверх-Продвинутый Сплав",
+  "item.ie.utec": "UTEC",
+  "item.ie.spectral_overclocker_upgrade": "Спектральное Улучшение \"Ускоритель\"",
+
+  "item.ie.spectral_circuit": "Спектральная Электросхема",
+  "item.ie.quantum_circuit": "Квантовая Электросхема",
+  "item.ie.nano_circuit": "Нано Электросхема",
+
+  "item.ie.spectralium": "Спектралий",
+  "item.ie.spectral_plate": "Спектральная Пластина",
+  "item.ie.spectral_crafting_component": "Спектральный Компонент Сборки",
+
+  "item.ie.spectral_crystal": "Спектральный Кристалл",
+  "item.ie.singularity_crystal": "Кристалл Сингулярности",
+  "item.ie.fly_module": "Моудль \"Полёт\"",
+
+  "tooltip.item.ie.multi_mode.normal": "Режим Копания: 1x1",
+  "tooltip.item.ie.multi_mode.big": "Режим Копания: 3x3",
+  "tooltip.item.ie.multi_mode.advbig": "Режим Копания: 5x5",
+  "tooltip.item.ie.multi_mode.superbig": "Режим Копания: 7x7",
+
+  "item.ie.quantum_drill": "Квантовый Бур",
+  "item.ie.nano_drill": "Нано Бур",
+  "item.ie.spectral_drill": "Спектральный Бур",
+
+  "item.ie.spectral_suit_chestplate": "Спектральный Нагрудник",
+  "item.ie.spectral_suit_leggings": "Спектральные Поножи",
+  "item.ie.spectral_suit_helmet": "Спектральный Шлем",
+  "item.ie.spectral_suit_boots": "Спектральные Ботинки",
+
+  "block.ie.quantum_quarry": "Квантовый Карьер",
+  "block.ie.nano_machine_casing": "Нано Машинный Корпус",
+  "block.ie.quantum_machine_casing": "Квантовый Машинный Корпус",
+  "block.ie.spectral_machine_casing": "Спектральный Машинный Корпус",
+  "block.ie.photon_cable": "Фотоновый Кабель",
+
+
+  "block.ie.iridium_fabricator": "Фабрикатор Иридия",
+  "block.ie.spectralium_fabricator": "Фабрикатор Спектралия",
+
+  "block.ie.spectral_macerator": "Спектральный Дробитель",
+  "block.ie.spectral_compressor": "Спектральный Сжиматель",
+  "block.ie.spectral_furnace": "Спектральная Печь",
+
+  "block.ie.advanced_lv_panel": "Продвинутая Солнечная Панель НН",
+  "block.ie.advanced_mv_panel": "Продвинутая Солнечная Панель СН",
+  "block.ie.advanced_hv_panel": "Продвинутая Солнечная Панель ВН",
+  "block.ie.advanced_ev_panel": "Продвинутая Солнечная Панель СВН",
+  "block.ie.advanced_luv_panel": "Продвинутая Солнечная Панель НМН",
+  "block.ie.advanced_uv_panel": "Продвинутая Солнечная Панель УН",
+  "block.ie.utesu": "ЭХУН",
+  "block.ie.hutesu": "ЭХСУН",
+  "block.ie.uv_transformer": "Траснформатор УН",
+  "block.ie.huv_transformer": "Трансформатор СУН",
+  "block.ie.advanced_adjustable_transformer": "Продвинутый Регулируемый Трансформатор",
+
+  "ie:gui.progress": "Прогресс:"
+}

@@ -69,7 +69,7 @@ public class AdvancedMVPanelTile extends BaseGeneratorTileEntity implements ITic
 
     @Override
     public BlockEntityType<?> createType() {
-        return ModBlocks.ADVANCED_LV_PANEL_TYPE;
+        return ModBlocks.ADVANCED_MV_PANEL_TYPE;
     }
 
     @Override

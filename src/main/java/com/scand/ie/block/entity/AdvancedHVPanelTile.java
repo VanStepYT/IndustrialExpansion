@@ -21,7 +21,7 @@ public class AdvancedHVPanelTile extends BaseGeneratorTileEntity implements ITic
 
     public AdvancedHVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.tier = 3;
+        this.tier = 4;
         this.production = 1024;
         this.lowerProduction = 512;
         this.maxStorage = 16384;

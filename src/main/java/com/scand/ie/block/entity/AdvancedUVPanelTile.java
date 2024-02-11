@@ -21,7 +21,7 @@ public class AdvancedUVPanelTile extends BaseGeneratorTileEntity implements ITic
 
     public AdvancedUVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.tier = 2;
+        this.tier = 8;
         this.production = 262144;
         this.lowerProduction = 131072;
         this.maxStorage = 2621440;
@@ -69,7 +69,7 @@ public class AdvancedUVPanelTile extends BaseGeneratorTileEntity implements ITic
 
     @Override
     public BlockEntityType<?> createType() {
-        return ModBlocks.ADVANCED_LV_PANEL_TYPE;
+        return ModBlocks.ADVANCED_UV_PANEL_TYPE;
     }
 
     @Override

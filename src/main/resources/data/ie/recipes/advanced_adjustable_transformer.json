@@ -1,0 +1,38 @@
+{
+  "type": "ic2:crafting_ic2_automated",
+  "sub_type": "ic2:shaped",
+  "enabled": true,
+  "output": {
+    "item": "ie:advanced_adjustable_transformer",
+    "count": 1
+  },
+  "hidden": false,
+  "consume": false,
+  "width": 1,
+  "height": 3,
+  "inputs": [
+    {
+      "item": "ic2:transformer_adjustable",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "A"
+    },
+    {
+      "item": "ie:spectral_crystal",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "B"
+    },
+    {
+      "item": "ie:huv_transformer",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "C"
+    }
+  ],
+  "pattern": [
+    "A",
+    "B",
+    "C"
+  ]
+}

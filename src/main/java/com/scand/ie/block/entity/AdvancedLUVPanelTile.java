@@ -21,7 +21,7 @@ public class AdvancedLUVPanelTile extends BaseGeneratorTileEntity implements ITi
 
     public AdvancedLUVPanelTile(BlockPos pos, BlockState state) {
         super(pos, state, 1);
-        this.tier = 5;
+        this.tier = 7;
         this.production = 65536;
         this.lowerProduction = 32768;
         this.maxStorage = 4194304;

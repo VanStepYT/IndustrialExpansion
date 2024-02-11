@@ -54,6 +54,8 @@
   "block.ie.utesu": "UTESU",
   "block.ie.hutesu": "HUTESU",
   "block.ie.uv_transformer": "UV Transformer",
+  "block.ie.huv_transformer": "HUV Transformer",
+  "block.ie.advanced_adjustable_transformer": "Advanced Adjustable Transformer",
 
   "ie:gui.progress": "Progress:"
 }

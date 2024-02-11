@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/advanced_adjustable_transformer/main",
+  "down": "ie:block/advanced_adjustable_transformer/main",
+  "up": "ie:block/advanced_adjustable_transformer/main",
+  "west": "ie:block/advanced_adjustable_transformer/main",
+  "east": "ie:block/advanced_adjustable_transformer/main",
+  "south": "ie:block/advanced_adjustable_transformer/side"
+}
