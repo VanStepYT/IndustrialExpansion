@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/iuv_transformer/side",
+  "down": "ie:block/iuv_transformer/side",
+  "up": "ie:block/iuv_transformer/side",
+  "west": "ie:block/iuv_transformer/side",
+  "east": "ie:block/iuv_transformer/side",
+  "south": "ie:block/iuv_transformer/main"
+}

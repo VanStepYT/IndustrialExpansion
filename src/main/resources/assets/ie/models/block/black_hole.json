@@ -1,0 +1,10 @@
+{
+	"loader": "forge:obj",
+	"flip_v": false,
+	"model": "ie:models/block/singularity.obj",
+	"textures": {
+		"texture": "ie:block/black_hole/texture",
+		"ring": "ie:block/black_hole/ring",
+		"particle": "minecraft:block/dirt"
+	}
+}

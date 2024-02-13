@@ -6,6 +6,7 @@ import ic2.api.recipes.registries.IMachineRecipeList;
 import ic2.core.IC2;
 import ic2.core.block.base.features.IParticleSpawner;
 import ic2.core.block.base.tiles.impls.machine.single.BasicMachineTileEntity;
+import ic2.core.block.machines.tiles.lv.MaceratorTileEntity;
 import ic2.core.platform.registries.IC2Sounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

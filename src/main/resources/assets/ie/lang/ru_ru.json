@@ -5,6 +5,9 @@
   "item.ie.utec": "UTEC",
   "item.ie.spectral_overclocker_upgrade": "Спектральное Улучшение \"Ускоритель\"",
 
+  "item.ie.dark_matter_shard": "Кусочек Тёмной Материи",
+  "item.ie.dark_matter": "Тёмная Материя",
+
   "item.ie.spectral_circuit": "Спектральная Электросхема",
   "item.ie.quantum_circuit": "Квантовая Электросхема",
   "item.ie.nano_circuit": "Нано Электросхема",
@@ -12,6 +15,10 @@
   "item.ie.spectralium": "Спектралий",
   "item.ie.spectral_plate": "Спектральная Пластина",
   "item.ie.spectral_crafting_component": "Спектральный Компонент Сборки",
+
+  "item.ie.singularium": "Сингулярий",
+  "item.ie.singularity_plate": "Пластина Сингулярности",
+  "item.ie.extremely_advanced_alloy": "Экстремально Продвинутый Сплав",
 
   "item.ie.spectral_crystal": "Спектральный Кристалл",
   "item.ie.singularity_crystal": "Кристалл Сингулярности",
@@ -36,10 +43,14 @@
   "block.ie.quantum_machine_casing": "Квантовый Машинный Корпус",
   "block.ie.spectral_machine_casing": "Спектральный Машинный Корпус",
   "block.ie.photon_cable": "Фотоновый Кабель",
+  "block.ie.neutron_cable": "Нейтроновый Кабель",
+  "block.ie.singularity": "Сингулярность",
 
 
   "block.ie.iridium_fabricator": "Фабрикатор Иридия",
   "block.ie.spectralium_fabricator": "Фабрикатор Спектралия",
+  "block.ie.black_hole_controller": "Контроллер Сингулярности",
+  "block.ie.black_hole_stabilizer": "Стабилизатор Сингулярности",
 
   "block.ie.spectral_macerator": "Спектральный Дробитель",
   "block.ie.spectral_compressor": "Спектральный Сжиматель",
@@ -53,9 +64,12 @@
   "block.ie.advanced_uv_panel": "Продвинутая Солнечная Панель УН",
   "block.ie.utesu": "ЭХУН",
   "block.ie.hutesu": "ЭХСУН",
+  "block.ie.iutesu": "ЭХНМУН",
   "block.ie.uv_transformer": "Траснформатор УН",
   "block.ie.huv_transformer": "Трансформатор СУН",
+  "block.ie.iuv_transformer": "Трансформатор НМУН",
   "block.ie.advanced_adjustable_transformer": "Продвинутый Регулируемый Трансформатор",
 
-  "ie:gui.progress": "Прогресс:"
+  "ie:gui.progress": "Прогресс:",
+  "death.attack.black_hole": "%1$s превратился в спагетти"
 }

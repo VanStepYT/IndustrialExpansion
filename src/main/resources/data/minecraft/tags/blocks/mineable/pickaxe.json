@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "ie:quantum_quarry",
+    "ie:nano_machine_casing",
+    "ie:quantum_machine_casing",
+    "ie:spectral_machine_casing",
+    "ie:singularity"
+  ]
+}

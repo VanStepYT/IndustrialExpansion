@@ -1,0 +1,13 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ie:nano_machine_casing"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "type": "ic2:crafting_ic2_automated",
+  "sub_type": "ic2:shaped",
+  "enabled": true,
+  "output": {
+    "item": "ie:black_hole_stabilizer",
+    "count": 1
+  },
+  "hidden": false,
+  "consume": false,
+  "width": 3,
+  "height": 3,
+  "inputs": [
+    {
+      "item": "ie:neutron_cable",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "A"
+    },
+    {
+      "item": "ie:black_hole_controller",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "B"
+    },
+    {
+      "item": "ie:singularity_crystal",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "C"
+    },
+    {
+      "item": "ie:iuv_transformer",
+      "size": 1,
+      "type": "ic2:item",
+      "letter": "D"
+    }
+  ],
+  "pattern": [
+    "ABA",
+    "ACA",
+    "ADA"
+  ]
+}

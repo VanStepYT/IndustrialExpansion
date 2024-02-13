@@ -5,6 +5,10 @@
   "item.ie.utec": "UTEC",
   "item.ie.spectral_overclocker_upgrade": "Spectral Overclocker Upgrade",
 
+  "item.ie.dark_matter_shard": "Dark Matter Shard",
+  "item.ie.dark_matter": "Dark Matter",
+
+
   "item.ie.spectral_circuit": "Spectral Circuit",
   "item.ie.quantum_circuit": "Quantum Circuit",
   "item.ie.nano_circuit": "Nano Circuit",
@@ -12,6 +16,10 @@
   "item.ie.spectralium": "Spectralium",
   "item.ie.spectral_plate": "Spectral Plate",
   "item.ie.spectral_crafting_component": "Spectral Crafting Component",
+
+  "item.ie.singularium": "Singularium",
+  "item.ie.singularity_plate": "Singularity Plate",
+  "item.ie.extremely_advanced_alloy": "Extremely Advanced Alloy",
 
   "item.ie.spectral_crystal": "Spectral Crystal",
   "item.ie.singularity_crystal": "Singularity Crystal",
@@ -36,10 +44,14 @@
   "block.ie.quantum_machine_casing": "Quantum Machine Casing",
   "block.ie.spectral_machine_casing": "Spectral Machine Casing",
   "block.ie.photon_cable": "Photon Cable",
+  "block.ie.neutron_cable": "Neutron Cable",
+  "block.ie.singularity": "Singularity",
 
 
   "block.ie.iridium_fabricator": "Iridium Fabricator",
   "block.ie.spectralium_fabricator": "Spectralium Fabricator",
+  "block.ie.black_hole_controller": "Black Hole Controller",
+  "block.ie.black_hole_stabilizer": "Black Hole Stabilizer",
 
   "block.ie.spectral_macerator": "Spectral Macerator",
   "block.ie.spectral_compressor": "Spectral Compressor",
@@ -53,9 +65,13 @@
   "block.ie.advanced_uv_panel": "Advanced UV Solar Panel",
   "block.ie.utesu": "UTESU",
   "block.ie.hutesu": "HUTESU",
+  "block.ie.iutesu": "IUTESU",
   "block.ie.uv_transformer": "UV Transformer",
   "block.ie.huv_transformer": "HUV Transformer",
+  "block.ie.iuv_transformer": "IUV Transformer",
   "block.ie.advanced_adjustable_transformer": "Advanced Adjustable Transformer",
 
-  "ie:gui.progress": "Progress:"
+  "ie:gui.progress": "Progress:",
+
+  "death.attack.black_hole": "%1$s turned into spaghetti"
 }

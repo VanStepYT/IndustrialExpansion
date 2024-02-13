@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/black_hole_stabilizer/active",
+  "active_down": "ie:block/black_hole_stabilizer/active",
+  "active_up": "ie:block/black_hole_stabilizer/active",
+  "active_west": "ie:block/black_hole_stabilizer/active",
+  "active_east": "ie:block/black_hole_stabilizer/active",
+  "active_south": "ie:block/black_hole_stabilizer/active",
+
+  "inactive_north": "ie:block/black_hole_stabilizer/inactive",
+  "inactive_down": "ie:block/black_hole_stabilizer/inactive",
+  "inactive_up": "ie:block/black_hole_stabilizer/inactive",
+  "inactive_west": "ie:block/black_hole_stabilizer/inactive",
+  "inactive_east": "ie:block/black_hole_stabilizer/inactive",
+  "inactive_south": "ie:block/black_hole_stabilizer/inactive"
+}

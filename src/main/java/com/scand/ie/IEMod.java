@@ -6,7 +6,6 @@ import com.scand.ie.block.ModBlockEntities;
 import com.scand.ie.block.ModBlocks;
 import com.scand.ie.screen.ModMenuTypes;
 import com.scand.ie.screen.QuantumQuarryScreen;
-import ic2.core.platform.rendering.IC2Textures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,16 +32,15 @@ public class IEMod
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
 
-
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
-
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
     private void commonSetup(final FMLCommonSetupEvent event){
     }
+
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

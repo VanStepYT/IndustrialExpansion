@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/iutesu/side",
+  "down": "ie:block/iutesu/side",
+  "up": "ie:block/iutesu/side",
+  "west": "ie:block/iutesu/side",
+  "east": "ie:block/iutesu/side",
+  "south": "ie:block/iutesu/south"
+}

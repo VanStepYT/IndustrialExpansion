@@ -1,3 +1,4 @@
 {
-	"photon": "ie:block/electric/cable/photon"
+	"photon": "ie:block/electric/cable/photon",
+	"neutron": "ie:block/electric/cable/neutron"
 }
