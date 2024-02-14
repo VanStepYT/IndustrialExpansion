@@ -9,8 +9,10 @@ import com.scand.ie.tools.NanoDrill;
 import com.scand.ie.tools.QuantumDrill;
 import com.scand.ie.tools.SpectralDrill;
 import ic2.core.block.base.misc.color.IColorListener;
+import ic2.core.item.base.PropertiesBuilder;
 import ic2.core.item.block.CableItem;
 import ic2.core.item.misc.BatteryItem;
+import ic2.core.item.misc.WindmillBladeItem;
 import ic2.core.item.wearable.armor.electric.QuantumSuit;
 import ic2.core.item.wearable.base.IC2ModularElectricArmor;
 import ic2.core.platform.registries.IC2Blocks;
@@ -51,6 +53,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SINGULARITY_PLATE = ITEMS.register("singularity_plate",
             ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> SINGULARITY_CIRCUIT = ITEMS.register("singularity_circuit",
+            ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> DARK_MATTER = ITEMS.register("dark_matter",
             ()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
@@ -76,9 +81,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPECTRAL_CRAFTING_COMPONENT = ITEMS.register("spectral_crafting_component",
             ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> SPECTRAL_OVERCLOCKER_UPGRADE = ITEMS.register("spectral_overclocker_upgrade",
+            SpectralOverclockerUpgrade::new);
     public static final RegistryObject<Item> SPECTRAL_PLATE = ITEMS.register("spectral_plate",
             ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
     public static final RegistryObject<Item> SPECTRALIUM = ITEMS.register("spectralium",
+            ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> SINGULARITY_SHARD = ITEMS.register("singularity_shard",
+            ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> SINGULARITY = ITEMS.register("singularity",
+            ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
+    public static final RegistryObject<Item> INVERTED_SINGULARITY = ITEMS.register("inverted_singularity",
             ()->new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public static final RegistryObject<Item> NANO_DRILL = ITEMS.register("nano_drill",
@@ -103,11 +120,37 @@ public class ModItems {
 
 
 
+    //String itemName, String type, int radius,
+    // float effectiveness, ResourceLocation texture, PropertiesBuilder properties
+    public static final RegistryObject<Item> COMPRESSED_IRIDIUM_ROTOR = ITEMS.register(
+            "compressed_iridium_rotor", () -> new WindmillBladeItem("compressed_iridium_rotor", "compressed_iridium",
+                    10,2f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/compressed_iridium_rotor"),
+                    new PropertiesBuilder().maxDamage(0)));
 
-    public static Item SPECTRAL_CABLE;
-    private static void registerSomeCables(){
-        //SPECTRAL_CABLE = registerItem(new CableItem("spectral_cable", ModBlocks.SPECTRAL_CABLE.defaultBlockState(), "spectral"));
-    }
+    public static final RegistryObject<Item> SPECTRAL_ROTOR = ITEMS.register(
+            "spectral_rotor", () -> new WindmillBladeItem("spectral_rotor", "spectral",
+                    10,4f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/spectral_rotor"),
+                    new PropertiesBuilder().maxDamage(0)));
+
+    public static final RegistryObject<Item> PHOTON_ROTOR = ITEMS.register(
+            "photon_rotor", () -> new WindmillBladeItem("photon_rotor", "photon",
+                    10,8f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/photon_rotor"),
+                    new PropertiesBuilder().maxDamage(0)));
+
+    public static final RegistryObject<Item> NEUTRON_ROTOR = ITEMS.register(
+            "neutron_rotor", () -> new WindmillBladeItem("neutron_rotor", "neutron",
+                    10,16f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/neutron_rotor"),
+                    new PropertiesBuilder().maxDamage(0)));
+
+    public static final RegistryObject<Item> SINGULARITY_ROTOR = ITEMS.register(
+            "singularity_rotor", () -> new WindmillBladeItem("singularity_rotor", "singularity",
+                    10,32f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/singularity_rotor"),
+                    new PropertiesBuilder().maxDamage(0)));
+
+
+
+
+
 
     public static <T extends Item> T registerItem(T item, ResourceLocation id) {
         ForgeRegistries.ITEMS.register(id, item);

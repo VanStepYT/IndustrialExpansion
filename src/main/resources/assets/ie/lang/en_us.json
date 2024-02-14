@@ -8,7 +8,7 @@
   "item.ie.dark_matter_shard": "Dark Matter Shard",
   "item.ie.dark_matter": "Dark Matter",
 
-
+  "item.ie.singularity_circuit": "Singularity Circuit",
   "item.ie.spectral_circuit": "Spectral Circuit",
   "item.ie.quantum_circuit": "Quantum Circuit",
   "item.ie.nano_circuit": "Nano Circuit",
@@ -20,6 +20,13 @@
   "item.ie.singularium": "Singularium",
   "item.ie.singularity_plate": "Singularity Plate",
   "item.ie.extremely_advanced_alloy": "Extremely Advanced Alloy",
+
+  "item.ie.compressed_iridium_rotor": "Compressed Iridium Rotor",
+  "item.ie.spectral_rotor": "Spectral Rotor",
+  "item.ie.photon_rotor": "Photon Rotor",
+  "item.ie.neutron_rotor": "Neutron Rotor",
+  "item.ie.singularity_rotor": "Singularity Rotor",
+
 
   "item.ie.spectral_crystal": "Spectral Crystal",
   "item.ie.singularity_crystal": "Singularity Crystal",
@@ -45,7 +52,17 @@
   "block.ie.spectral_machine_casing": "Spectral Machine Casing",
   "block.ie.photon_cable": "Photon Cable",
   "block.ie.neutron_cable": "Neutron Cable",
-  "block.ie.singularity": "Singularity",
+
+  "block.ie.ies_transporter": "IES Transporter",
+  "block.ie.ies_splitter": "IES Splitter",
+  "block.ie.ies_output": "IES Output",
+
+  "item.ie.singularity": "Singularity",
+  "item.ie.singularity_shard": "Singularity Shard",
+  "item.ie.inverted_singularity": "Inverted Singularity",
+
+  "block.ie.white_hole_controller": "White Hole Controller",
+  "block.ie.white_hole_stabilizer": "White Hole Stabilizer",
 
 
   "block.ie.iridium_fabricator": "Iridium Fabricator",
@@ -56,6 +73,11 @@
   "block.ie.spectral_macerator": "Spectral Macerator",
   "block.ie.spectral_compressor": "Spectral Compressor",
   "block.ie.spectral_furnace": "Spectral Furnace",
+
+  "block.ie.singularium_furnace": "Singularium Furnace",
+  "block.ie.singularium_compressor": "Singularium Compressor",
+  "block.ie.singularium_macerator": "Singularium Macerator",
+  "block.ie.singularium_extractor": "Singularium Extractor",
 
   "block.ie.advanced_lv_panel": "Advanced LV Solar Panel",
   "block.ie.advanced_mv_panel": "Advanced MV Solar Panel",

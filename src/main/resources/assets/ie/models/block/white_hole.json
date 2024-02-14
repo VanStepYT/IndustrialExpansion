@@ -1,0 +1,12 @@
+{
+	"loader": "forge:obj",
+	"flip_v": false,
+	"shade": false,
+	"ambientocclusion": false,
+	"model": "ie:models/block/white_hole.obj",
+	"textures": {
+		"texture": "ie:block/white_hole/texture",
+		"ring": "ie:block/white_hole/ring",
+		"particle": "minecraft:block/dirt"
+	}
+}

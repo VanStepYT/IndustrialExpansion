@@ -1,0 +1,12 @@
+# Made in Blockbench 4.9.3
+newmtl m_f32b7532-26d1-e50f-be3c-0b7d41783c8d
+map_Kd ie:block/black_hole/white_texture
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 100.0 100.0 100.0
+Ni 1.450000
+d 1.000000
+illum 2
+newmtl none

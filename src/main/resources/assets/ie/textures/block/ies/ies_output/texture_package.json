@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/ies/ies_side",
+  "down": "ie:block/ies/ies_side",
+  "up": "ie:block/ies/ies_side",
+  "west": "ie:block/ies/ies_side",
+  "east": "ie:block/ies/ies_side",
+  "south": "ie:block/ies/ies_output/main"
+}

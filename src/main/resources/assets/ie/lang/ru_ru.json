@@ -8,6 +8,7 @@
   "item.ie.dark_matter_shard": "Кусочек Тёмной Материи",
   "item.ie.dark_matter": "Тёмная Материя",
 
+  "item.ie.singularity_circuit": "Электросхема Сингулярности",
   "item.ie.spectral_circuit": "Спектральная Электросхема",
   "item.ie.quantum_circuit": "Квантовая Электросхема",
   "item.ie.nano_circuit": "Нано Электросхема",
@@ -19,6 +20,12 @@
   "item.ie.singularium": "Сингулярий",
   "item.ie.singularity_plate": "Пластина Сингулярности",
   "item.ie.extremely_advanced_alloy": "Экстремально Продвинутый Сплав",
+
+  "item.ie.compressed_iridium_rotor": "Ротор Сжатого Иридия",
+  "item.ie.spectral_rotor": "Спектральный Ротор",
+  "item.ie.photon_rotor": "Фотонный Ротор",
+  "item.ie.neutron_rotor": "Нейтронный Ротор",
+  "item.ie.singularity_rotor": "Ротор Сингулярности",
 
   "item.ie.spectral_crystal": "Спектральный Кристалл",
   "item.ie.singularity_crystal": "Кристалл Сингулярности",
@@ -44,8 +51,16 @@
   "block.ie.spectral_machine_casing": "Спектральный Машинный Корпус",
   "block.ie.photon_cable": "Фотоновый Кабель",
   "block.ie.neutron_cable": "Нейтроновый Кабель",
-  "block.ie.singularity": "Сингулярность",
+  "item.ie.singularity": "Сингулярность",
+  "item.ie.singularity_shard": "Осколок Сингулярности",
+  "item.ie.inverted_singularity": "Инвертированная Сингулярность",
 
+  "block.ie.ies_transporter": "МЭХ Проводник",
+  "block.ie.ies_splitter": "МЭХ Разделитель",
+  "block.ie.ies_output": "МЭХ Выход",
+
+  "block.ie.white_hole_controller": "Контроллер Инвертированной Сингулярности",
+  "block.ie.white_hole_stabilizer": "Стабилизатор Инвертированной Сингулярности",
 
   "block.ie.iridium_fabricator": "Фабрикатор Иридия",
   "block.ie.spectralium_fabricator": "Фабрикатор Спектралия",
@@ -55,6 +70,11 @@
   "block.ie.spectral_macerator": "Спектральный Дробитель",
   "block.ie.spectral_compressor": "Спектральный Сжиматель",
   "block.ie.spectral_furnace": "Спектральная Печь",
+
+  "block.ie.singularium_furnace": "Печь Сингулярности",
+  "block.ie.singularium_compressor": "Сжиматель Сингулярности",
+  "block.ie.singularium_macerator": "Дробитель Сингулярности",
+  "block.ie.singularium_extractor": "Экстрактор Сингулярности",
 
   "block.ie.advanced_lv_panel": "Продвинутая Солнечная Панель НН",
   "block.ie.advanced_mv_panel": "Продвинутая Солнечная Панель СН",

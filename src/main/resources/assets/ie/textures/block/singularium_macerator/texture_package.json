@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/singularium_side",
+  "active_down": "ie:block/singularium_side",
+  "active_up": "ie:block/singularium_side",
+  "active_west": "ie:block/singularium_side",
+  "active_east": "ie:block/singularium_side",
+  "active_south": "ie:block/singularium_furnace/main",
+
+  "inactive_north": "ie:block/singularium_side",
+  "inactive_down": "ie:block/singularium_side",
+  "inactive_up": "ie:block/singularium_side",
+  "inactive_west": "ie:block/singularium_side",
+  "inactive_east": "ie:block/singularium_side",
+  "inactive_south": "ie:block/singularium_furnace/main"
+}

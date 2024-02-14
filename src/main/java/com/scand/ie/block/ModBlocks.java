@@ -12,7 +12,13 @@ import com.scand.ie.block.custom.cable.PhotonCableTile;
 import com.scand.ie.block.custom.machines.SpectralCompressor;
 import com.scand.ie.block.custom.machines.SpectralFurnace;
 import com.scand.ie.block.custom.machines.SpectralMacerator;
+import com.scand.ie.block.custom.machines.singularium.SingulariumCompressor;
+import com.scand.ie.block.custom.machines.singularium.SingulariumExtractor;
+import com.scand.ie.block.custom.machines.singularium.SingulariumFurnace;
+import com.scand.ie.block.custom.machines.singularium.SingulariumMacerator;
+import com.scand.ie.block.custom.whitehole.*;
 import com.scand.ie.block.entity.*;
+import com.scand.ie.ies.*;
 import ic2.core.block.base.drops.IBlockDropProvider;
 import ic2.core.block.cables.CableBlock;
 import ic2.core.block.machines.BaseMachineBlock;
@@ -36,6 +42,19 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, IEMod.MOD_ID);
+    public static final BlockEntityType<InvertedStabilizerTile> WHITE_HOLE_STABILIZER_TYPE = IC2Tiles.createTile("white_hole_stabilizer", InvertedStabilizerTile::new);
+    public static final BlockEntityType<InvertedControllerTile> WHITE_HOLE_CONTROLLER_TYPE = IC2Tiles.createTile("white_hole_controller", InvertedControllerTile::new);
+    public static BlockEntityType<IESTransporter> IES_TRANSPORTER_TYPE = IC2Tiles.createTile("ies_transporter", IESTransporter::new);
+    public static BlockEntityType<IESSplitter> IES_SPLITTER_TYPE = IC2Tiles.createTile("ies_splitter", IESSplitter::new);
+    public static BlockEntityType<IESOutput> IES_OUTPUT_TYPE = IC2Tiles.createTile("ies_output", IESOutput::new);
+
+
+    public static RegistryObject<Block> IES_TRANSPORTER = registerBlock("ies_transporter",
+            ()-> new IESBlock("ies_transporter",IES_TRANSPORTER_TYPE), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> IES_SPLITTER = registerBlock("ies_splitter",
+            ()-> new IESSBlock("ies_splitter",IES_SPLITTER_TYPE), CreativeModeTab.TAB_MISC);
+    public static RegistryObject<Block> IES_OUTPUT = registerBlock("ies_output",
+            ()-> new IESBlock("ies_output",IES_OUTPUT_TYPE), CreativeModeTab.TAB_MISC);
 
     public static ItemStack getPhotonDrop(int insulation) {
         return new ItemStack(ModBlocks.PHOTON_CABLE.get());
@@ -59,6 +78,13 @@ public class ModBlocks {
 
     public static final BlockEntityType<SpectralFurnace> SPECTRAL_FURNACE_TYPE = IC2Tiles.createTile("spectral_furnace", SpectralFurnace::new);
 
+
+    public static final BlockEntityType<SingulariumCompressor> SINGULARIUM_COMPRESSOR_TYPE = IC2Tiles.createTile("singularium_compressor", SingulariumCompressor::new);
+    public static final BlockEntityType<SingulariumMacerator> SINGULARIUM_MACERATOR_TYPE = IC2Tiles.createTile("singularium_macerator", SingulariumMacerator::new);
+    public static final BlockEntityType<SingulariumFurnace> SINGULARIUM_FURNACE_TYPE = IC2Tiles.createTile("singularium_furnace", SingulariumFurnace::new);
+    public static final BlockEntityType<SingulariumExtractor> SINGULARIUM_EXTRACTOR_TYPE = IC2Tiles.createTile("singularium_extractor", SingulariumExtractor::new);
+
+
     public static final BlockEntityType<ControllerTile> BLACK_HOLE_CONTROLLER_TYPE = IC2Tiles.createTile("black_hole_controller", ControllerTile::new);
     public static final BlockEntityType<StabilizerTile> BLACK_HOLE_STABILIZER_TYPE = IC2Tiles.createTile("black_hole_stabilizer", StabilizerTile::new);
 
@@ -81,6 +107,14 @@ public class ModBlocks {
             () -> new StabilizerBlock("black_hole_stabilizer",BLACK_HOLE_STABILIZER_TYPE),
             CreativeModeTab.TAB_MISC);
 
+    public static final RegistryObject<Block> WHITE_HOLE_CONTROLLER = registerBlock("white_hole_controller",
+            () -> new InvertedControllerBlock("white_hole_controller", IBlockDropProvider.SELF_OR_ADV_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID,
+                            "white_hole_controller"),WHITE_HOLE_CONTROLLER_TYPE),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> WHITE_HOLE_STABILIZER = registerBlock("white_hole_stabilizer",
+            () -> new InvertedStabilizerBlock("white_hole_stabilizer",WHITE_HOLE_STABILIZER_TYPE),
+            CreativeModeTab.TAB_MISC);
+
     public static final RegistryObject<Block> SPECTRAL_MACERATOR = registerBlock("spectral_macerator",
             () -> new BaseMachineBlock("spectral_macerator", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
                     ITextureProvider.toggle(IEMod.MOD_ID, "spectral_macerator"),SPECTRAL_MACERATOR_TYPE),
@@ -96,12 +130,35 @@ public class ModBlocks {
                     ITextureProvider.toggle(IEMod.MOD_ID, "spectral_furnace"),SPECTRAL_FURNACE_TYPE),
             CreativeModeTab.TAB_MISC);
 
+
+    public static final RegistryObject<Block> SINGULARIUM_FURNACE = registerBlock("singularium_furnace",
+            () -> new BaseMachineBlock("singularium_furnace", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "singularium_furnace"),SINGULARIUM_FURNACE_TYPE),
+            CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> SINGULARIUM_MACERATOR = registerBlock("singularium_macerator",
+            () -> new BaseMachineBlock("singularium_macerator", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "singularium_macerator"),SINGULARIUM_MACERATOR_TYPE),
+            CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> SINGULARIUM_COMPRESSOR = registerBlock("singularium_compressor",
+            () -> new BaseMachineBlock("singularium_compressor", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "singularium_compressor"),SINGULARIUM_COMPRESSOR_TYPE),
+            CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> SINGULARIUM_EXTRACTOR = registerBlock("singularium_extractor",
+            () -> new BaseMachineBlock("singularium_extractor", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "singularium_extractor"),SINGULARIUM_EXTRACTOR_TYPE),
+            CreativeModeTab.TAB_MISC);
+
+
     public static final RegistryObject<Block> NANO_MACHINE_CASING = registerBlock("nano_machine_casing",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(2.5f, 18).requiresCorrectToolForDrops()),
             CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> SINGULARITY = registerAnonimusBlock("singularity",
             () -> new BlackHole(BlockBehaviour.Properties.of(Material.METAL).strength(-1f, 18).requiresCorrectToolForDrops()),
+            CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<Block> INVERTED_SINGULARITY = registerAnonimusBlock("inverted_singularity",
+            () -> new WhiteHole(BlockBehaviour.Properties.of(Material.METAL).strength(-1f, 18).requiresCorrectToolForDrops()),
             CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<Block> QUANTUM_MACHINE_CASING = registerBlock("quantum_machine_casing",

@@ -1,17 +1,17 @@
 {
 	"input": {
 		"item": {
-			"item": "ie:dark_matter_shard",
+			"item": "ie:singularity",
 			"count": 1
 		},
-		"size": 9,
+		"size": 16,
 		"type": "ic2:nbtstack"
 	},
 	"output": {
 		"xp": 0.0,
 		"outputs": [
 			{
-				"item": "ie:dark_matter",
+				"item": "ie:inverted_singularity",
 				"count": 1
 			}
 		],

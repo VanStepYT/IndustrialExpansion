@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/ies/ies_transporter/side",
+  "down": "ie:block/ies/ies_transporter/side",
+  "up": "ie:block/ies/ies_transporter/side",
+  "west": "ie:block/ies/ies_transporter/side",
+  "east": "ie:block/ies/ies_transporter/side",
+  "south": "ie:block/ies/ies_transporter/main"
+}

@@ -1,7 +1,7 @@
 {
 	"input": {
 		"item": {
-			"item": "ie:dark_matter_shard",
+			"item": "ie:singularity_shard",
 			"count": 1
 		},
 		"size": 9,
@@ -11,7 +11,7 @@
 		"xp": 0.0,
 		"outputs": [
 			{
-				"item": "ie:dark_matter",
+				"item": "ie:singularity",
 				"count": 1
 			}
 		],

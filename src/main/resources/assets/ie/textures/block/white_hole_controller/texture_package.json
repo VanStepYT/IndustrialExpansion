@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/white_hole_controller/side_active",
+  "active_down": "ie:block/white_hole_controller/end_active",
+  "active_up": "ie:block/white_hole_controller/end_active",
+  "active_west": "ie:block/white_hole_controller/side_active",
+  "active_east": "ie:block/white_hole_controller/side_active",
+  "active_south": "ie:block/white_hole_controller/side_active",
+
+  "inactive_north": "ie:block/white_hole_controller/side_inactive",
+  "inactive_down": "ie:block/white_hole_controller/end_inactive",
+  "inactive_up": "ie:block/white_hole_controller/end_inactive",
+  "inactive_west": "ie:block/white_hole_controller/side_inactive",
+  "inactive_east": "ie:block/white_hole_controller/side_inactive",
+  "inactive_south": "ie:block/white_hole_controller/side_inactive"
+}
