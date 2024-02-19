@@ -127,6 +127,11 @@ public class ModItems {
                     10,2f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/compressed_iridium_rotor"),
                     new PropertiesBuilder().maxDamage(0)));
 
+    public static final RegistryObject<Item> UUM_ROTOR = ITEMS.register(
+            "uum_rotor", () -> new WindmillBladeItem("uum_rotor", "uum",
+                    10,0.25f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/uum_rotor"),
+                    new PropertiesBuilder().maxDamage(0)));
+
     public static final RegistryObject<Item> SPECTRAL_ROTOR = ITEMS.register(
             "spectral_rotor", () -> new WindmillBladeItem("spectral_rotor", "spectral",
                     10,4f,new ResourceLocation(IEMod.MOD_ID, "models/windmill/spectral_rotor"),

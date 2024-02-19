@@ -3,5 +3,6 @@
   "compressed_iridium": "ie:item/blades/rotors/compressed_iridium",
   "photon": "ie:item/blades/rotors/photon",
   "neutron": "ie:item/blades/rotors/neutron",
-  "singularity": "ie:item/blades/rotors/singularity"
+  "singularity": "ie:item/blades/rotors/singularity",
+  "uum": "ie:item/blades/rotors/uum"
 }
