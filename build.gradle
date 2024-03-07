@@ -148,7 +148,7 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    implementation fg.deobf("curse.maven:ic2_classic-242942:4879119")
+    implementation fg.deobf("curse.maven:ic2-classic-242942:5152384")
     implementation fg.deobf("curse.maven:jei-238222:4712866")
 
 
