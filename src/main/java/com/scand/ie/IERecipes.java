@@ -492,17 +492,21 @@ public class IERecipes {
     }
 
     public static void initMachineRecipes() {
-        IC2.RECIPES.get(true).extractor.registerListener(r -> r.addSimpleRecipe(rl("moon_matter_from_uum"), new ItemStack(ModItems.MOON_MATTER.get()), IC2Items.UUMATTER.getDefaultInstance()));
-        IC2.RECIPES.get(true).extractor.registerListener(r -> r.addSimpleRecipe(rl("inversed_singularity"), new ItemStack(ModItems.INVERTED_SINGULARITY.get()), new ItemStack(ModItems.SINGULARITY.get(), 16)));
-        IC2.RECIPES.get(true).extractor.registerListener(r -> r.addSimpleRecipe(rl("singularium"), new ItemStack(ModItems.SINGULARIUM.get()), new ItemStack(ModItems.DARK_MATTER.get(), 4)));
+        IC2.RECIPES.get(true).extractor.registerListener(r -> {
+            r.addSimpleRecipe(rl("moon_matter_from_uum"), new ItemStack(ModItems.MOON_MATTER.get()), IC2Items.UUMATTER.getDefaultInstance());
+            r.addSimpleRecipe(rl("inversed_singularity"), new ItemStack(ModItems.INVERTED_SINGULARITY.get()), new ItemStack(ModItems.SINGULARITY.get(), 16));
+            r.addSimpleRecipe(rl("singularium"), new ItemStack(ModItems.SINGULARIUM.get()), new ItemStack(ModItems.DARK_MATTER.get(), 4));
+        });
 
         IC2.RECIPES.get(true).macerator.registerListener(r -> r.addSimpleRecipe(rl("singularity_shard"), new ItemStack(ModItems.SINGULARITY_SHARD.get()), new ItemStack(ModItems.DARK_MATTER.get(), 64)));
 
-        IC2.RECIPES.get(true).compressor.registerListener(r -> r.addSimpleRecipe(rl("dark_matter"), new ItemStack(ModItems.DARK_MATTER.get()), new ItemStack(ModItems.DARK_MATTER_SHARD.get(), 9)));
-        IC2.RECIPES.get(true).compressor.registerListener(r -> r.addSimpleRecipe(rl("highly_advanced_alloy"), new ItemStack(ModItems.HIGHLY_ADVANCED_ALLOY.get()), new ItemStack(ModItems.RAW_HIGHLY_ADVANCED_ALLOY.get())));
-        IC2.RECIPES.get(true).compressor.registerListener(r -> r.addSimpleRecipe(rl("neutron_cable"), new ItemStack(ModBlocks.NEUTRON_CABLE.get()), new ItemStack(ModItems.DARK_MATTER.get())));
-        IC2.RECIPES.get(true).compressor.registerListener(r -> r.addSimpleRecipe(rl("photon_cable"), new ItemStack(ModBlocks.PHOTON_CABLE.get()), new ItemStack(ModItems.SPECTRAL_PLATE.get())));
-        IC2.RECIPES.get(true).compressor.registerListener(r -> r.addSimpleRecipe(rl("singularity"), new ItemStack(ModBlocks.SINGULARITY.get()), new ItemStack(ModItems.SINGULARITY_SHARD.get(), 9)));
+        IC2.RECIPES.get(true).compressor.registerListener(r -> {
+            r.addSimpleRecipe(rl("dark_matter"), new ItemStack(ModItems.DARK_MATTER.get()), new ItemStack(ModItems.DARK_MATTER_SHARD.get(), 9));
+            r.addSimpleRecipe(rl("highly_advanced_alloy"), new ItemStack(ModItems.HIGHLY_ADVANCED_ALLOY.get()), new ItemStack(ModItems.RAW_HIGHLY_ADVANCED_ALLOY.get()));
+            r.addSimpleRecipe(rl("neutron_cable"), new ItemStack(ModBlocks.NEUTRON_CABLE.get()), new ItemStack(ModItems.DARK_MATTER.get()));
+            r.addSimpleRecipe(rl("photon_cable"), new ItemStack(ModBlocks.PHOTON_CABLE.get()), new ItemStack(ModItems.SPECTRAL_PLATE.get()));
+            r.addSimpleRecipe(rl("singularity"), new ItemStack(ModBlocks.SINGULARITY.get()), new ItemStack(ModItems.SINGULARITY_SHARD.get(), 9));
+        });
     }
 
     public static ResourceLocation rl(String path) {
