@@ -1,5 +1,6 @@
 package com.scand.ie.block.entity;
 
+import com.scand.ie.IEMod;
 import com.scand.ie.block.ModBlocks;
 import ic2.core.block.base.tiles.impls.BaseEnergyStorageTileEntity;
 import ic2.core.block.storage.tiles.storage.MFSUTileEntity;
@@ -18,6 +19,11 @@ public class HUTESUTile extends BaseEnergyStorageTileEntity {
     @Override
     public int getGuiOffset() {
         return -20;
+    }
+
+    @Override
+    public ResourceLocation getTexture() {
+        return new ResourceLocation(IEMod.MOD_ID, "textures/gui/hutesu.png");
     }
 
     @Override
