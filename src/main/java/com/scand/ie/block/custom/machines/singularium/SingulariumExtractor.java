@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class SingulariumExtractor extends BasicMachineTileEntity implements IParticleSpawner {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(IEMod.MOD_ID, "textures/gui/singularium_extractor.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(IEMod.MOD_ID, "textures/gui/quantum_extractor.png");
     public SingulariumExtractor(BlockPos pos, BlockState state) {
         super(pos, state,3, 3, 8192, 35, 2097152);
     }

@@ -30,7 +30,7 @@ public class SpectraliumFabricatorComponent extends GuiWidget {
 
         float progress = tile.getProgress() / tile.getMaxProgress();
         DecimalFormat format = Formatters.EU_READER_FORMAT;
-        gui.drawString(matrix, this.string(format.format(progress * 100.0F) + "%"), 20,30,0xFFFFFF);
+        gui.drawString(matrix, this.string(Math.round(progress*100) + "%"), 20,30,0xFFFFFF);
         //gui.drawString(matrix, this.string(tile.getProgress() + "EU"), 30,40,4210752);
     }
 }

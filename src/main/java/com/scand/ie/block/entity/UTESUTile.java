@@ -3,7 +3,9 @@ package com.scand.ie.block.entity;
 import com.scand.ie.block.ModBlocks;
 import ic2.core.block.base.tiles.impls.BaseEnergyStorageTileEntity;
 import ic2.core.block.storage.tiles.storage.ISUTileEntity;
+import ic2.core.block.storage.tiles.storage.MFSUTileEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +23,11 @@ public class UTESUTile extends BaseEnergyStorageTileEntity {
     @Override
     public BlockEntityType<?> createType() {
         return ModBlocks.UTESU_TILE_TYPE;
+    }
+
+    @Override
+    public ResourceLocation getTexture() {
+        return MFSUTileEntity.TEXTURE;
     }
 
     @Override

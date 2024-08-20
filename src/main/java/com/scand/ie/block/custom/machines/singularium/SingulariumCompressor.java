@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class SingulariumCompressor extends BasicMachineTileEntity implements IParticleSpawner {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(IEMod.MOD_ID, "textures/gui/singularium_compressor.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(IEMod.MOD_ID, "textures/gui/quantum_compressor.png");
     public SingulariumCompressor(BlockPos pos, BlockState state) {
         super(pos, state,3, 8192, 35, 2097152);
     }

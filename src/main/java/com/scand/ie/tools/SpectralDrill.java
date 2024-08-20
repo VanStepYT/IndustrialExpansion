@@ -53,7 +53,6 @@ public class SpectralDrill extends DrillTool implements IMultiTargetTool {
             return 1.0F;
         }
     }
-
     public boolean onBlockStartBreak(ItemStack stack, BlockPos pos, Player player) {
         if ((this.isMultiMining(stack)||this.isAdvancedMultiMining(stack)||this.isSuperMultiMining(stack)) && this.canMultiMine(stack)) {
             Level world = player.level;

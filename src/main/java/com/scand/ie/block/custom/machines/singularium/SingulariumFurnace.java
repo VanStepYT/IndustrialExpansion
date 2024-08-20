@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class SingulariumFurnace extends BasicMachineTileEntity implements IParticleSpawner {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(IEMod.MOD_ID, "textures/gui/singularium_furnace.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(IEMod.MOD_ID, "textures/gui/quantum_furnace.png");
     public SingulariumFurnace(BlockPos pos, BlockState state) {
         super(pos, state,3, 8192, 35, 2097152);
     }

@@ -2,7 +2,10 @@ package com.scand.ie.block.entity;
 
 import com.scand.ie.block.ModBlocks;
 import ic2.core.block.base.tiles.impls.BaseEnergyStorageTileEntity;
+import ic2.core.block.storage.tiles.storage.MFSUTileEntity;
+import ic2.core.platform.registries.IC2Blocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -20,6 +23,11 @@ public class HUTESUTile extends BaseEnergyStorageTileEntity {
     @Override
     public BlockEntityType<?> createType() {
         return ModBlocks.HUTESU_TILE_TYPE;
+    }
+
+    @Override
+    public ResourceLocation getTexture() {
+        return MFSUTileEntity.TEXTURE;
     }
 
     @Override
