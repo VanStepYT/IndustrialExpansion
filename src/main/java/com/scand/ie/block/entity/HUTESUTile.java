@@ -32,11 +32,6 @@ public class HUTESUTile extends BaseEnergyStorageTileEntity {
     }
 
     @Override
-    public ResourceLocation getTexture() {
-        return MFSUTileEntity.TEXTURE;
-    }
-
-    @Override
     public double getDropRate(Player player) {
         return 1.0;
     }
