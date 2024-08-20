@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/mass_multiplier/side",
+	"down": "ie:block/mass_multiplier/side",
+	"up": "ie:block/mass_multiplier/side",
+	"west": "ie:block/mass_multiplier/side",
+	"east": "ie:block/mass_multiplier/side",
+	"south": "ie:block/mass_multiplier/active_south"
+}

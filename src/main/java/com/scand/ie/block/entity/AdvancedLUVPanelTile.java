@@ -2,6 +2,7 @@ package com.scand.ie.block.entity;
 
 import com.scand.ie.block.ModBlocks;
 import ic2.api.energy.tile.IEnergySource;
+import ic2.api.tiles.readers.IActivityProvider;
 import ic2.api.tiles.readers.IEUProducer;
 import ic2.core.block.base.features.ITickListener;
 import ic2.core.block.base.features.ITileActivityProvider;
@@ -16,7 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class AdvancedLUVPanelTile extends BaseGeneratorTileEntity implements ITickListener, IEnergySource, IWrenchableTile, IEUProducer, ITileActivityProvider {
+public class AdvancedLUVPanelTile extends BaseGeneratorTileEntity implements ITickListener, IEnergySource, IWrenchableTile, IActivityProvider, IEUProducer, ITileActivityProvider {
     private int lowerProduction;
 
     public AdvancedLUVPanelTile(BlockPos pos, BlockState state) {

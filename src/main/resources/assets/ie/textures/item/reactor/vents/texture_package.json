@@ -1,0 +1,5 @@
+{
+	"iridium_heat": "ie:item/reactor/vents/iridium_heat",
+	"iridium_electric": "ie:item/reactor/vents/iridium_electric",
+	"iridium_steam": "ie:item/reactor/vents/iridium_steam"
+}

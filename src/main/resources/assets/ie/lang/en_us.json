@@ -28,15 +28,48 @@
   "item.ie.singularity_rotor": "Singularity Rotor",
   "item.ie.uum_rotor": "UUM Rotor",
 
+  "item.ie.uranium_rod_iridium_single": "Single Iridium-Enriched Uranium Rod",
+  "item.ie.uranium_rod_iridium_dual": "Dual Iridium-Enriched Uranium Rod",
+  "item.ie.uranium_rod_iridium_quad": "Quad Iridium-Enriched Uranium Rod",
+  "item.ie.uranium_rod_iridium_octo": "Octo Iridium-Enriched Uranium Rod",
+  "item.ie.uranium_rod_iridium_hexodecimal": "Hexadecimal Iridium-Enriched Uranium Rod",
+
+  "item.ie.heat_vent_iridium": "Iridium Heat Vent",
+  "item.ie.steam_vent_iridium": "Iridium Steam Vent",
+  "item.ie.electric_vent_iridium": "Iridium Electric Vent",
+
+  "item.ie.heat_storage_eighteen": "180K Coolant Cell",
+  "item.ie.heat_storage_fifty": "540K Coolant Cell",
+  "item.ie.heat_storage_iridium": "Iridium Coolant Cell",
 
   "item.ie.spectral_crystal": "Spectral Crystal",
   "item.ie.singularity_crystal": "Singularity Crystal",
   "item.ie.fly_module": "Flight Module",
 
+  "item.ie.basic_day_component": "Basic Day Component",
+  "item.ie.basic_night_component": "Basic Night Component",
+  "item.ie.advanced_day_component": "Advanced Day Component",
+  "item.ie.advanced_night_component": "Advanced Night Component",
+  "item.ie.overclocked_day_component": "Overclocked Day Component",
+  "item.ie.overclocked_night_component": "Overclocked Night Component",
+
+  "item.ie.basic_solar_cooler": "Basic Solar Cooler",
+  "item.ie.advanced_solar_cooler": "Advanced Solar Cooler",
+  "item.ie.overclocked_solar_cooler": "Overclocked Solar Cooler",
+
+  "item.ie.solar_preventer": "Solar Reactor Fail Preventer",
+
   "tooltip.item.ie.multi_mode.normal": "Mode: 1x1",
   "tooltip.item.ie.multi_mode.big": "Mode: 3x3",
   "tooltip.item.ie.multi_mode.advbig": "Mode: 5x5",
   "tooltip.item.ie.multi_mode.superbig": "Mode: 7x7",
+
+  "tooltip.ie.solar_heat": "[Solar Reactor Heat]: ",
+  "tooltip.ie.solar_cooling": "[Solar Reactor Cooling]: ",
+  "tooltip.ie.solar_heating": "[Solar Reactor Heating]: ",
+  "tooltip.ie.solar_production": "[Solar Reactor Production]: ",
+  "tooltip.ie.solar_stable": "[Is Solar Reactor Stable?]: Yes!",
+  "tooltip.ie.solar_nonstable": "[Is Solar Reactor Stable?]: No!",
 
   "item.ie.quantum_drill": "Quantum Drill",
   "item.ie.nano_drill": "Nano Drill",
@@ -47,12 +80,19 @@
   "item.ie.spectral_suit_helmet": "Spectral Suit Helmet",
   "item.ie.spectral_suit_boots": "Spectral Suit Boots",
 
+  "item.ie.silicon": "Silicon",
+
   "block.ie.quantum_quarry": "Quantum Quarry",
+  "block.ie.advanced_quantum_quarry": "Advanced Quantum Quarry",
   "block.ie.nano_machine_casing": "Nano Machine Casing",
   "block.ie.quantum_machine_casing": "Quantum Machine Casing",
   "block.ie.spectral_machine_casing": "Spectral Machine Casing",
   "block.ie.photon_cable": "Photon Cable",
   "block.ie.neutron_cable": "Neutron Cable",
+
+  "block.ie.solar_reactor": "Solar Reactor",
+
+  "block.ie.speed_extraction_tube": "Overclocked Extraction Tube",
 
   "block.ie.ies_transporter": "IES Transporter",
   "block.ie.ies_splitter": "IES Splitter",
@@ -75,6 +115,9 @@
   "block.ie.spectral_compressor": "Spectral Compressor",
   "block.ie.spectral_furnace": "Spectral Furnace",
 
+  "block.ie.mass_multiplier": "Mass Multiplier",
+  "block.ie.iridium_cable": "Iridium Cable",
+
   "block.ie.singularium_furnace": "Singularium Furnace",
   "block.ie.singularium_compressor": "Singularium Compressor",
   "block.ie.singularium_macerator": "Singularium Macerator",
@@ -93,6 +136,19 @@
   "block.ie.huv_transformer": "HUV Transformer",
   "block.ie.iuv_transformer": "IUV Transformer",
   "block.ie.advanced_adjustable_transformer": "Advanced Adjustable Transformer",
+
+  "block.ie.hydrogen_reactor": "Hydrogen Reactor",
+  "block.ie.hydrogen_cooler": "Hydrogen Cooler",
+  "block.ie.hydrogen_heater": "Hydrogen Heater",
+  "item.ie.hydrogen_cell": "Hydrogen Cell",
+  "block.ie.aluminium_thermoelement": "Aluminium Thermoelement",
+  "block.ie.silver_thermoelement": "Silver Thermoelement",
+
+  "block.ie.helium_reactor": "Helium Reactor",
+  "block.ie.helium_cooler": "Helium Cooler",
+  "block.ie.helium_heater": "Helium Heater",
+  "item.ie.helium_cell": "Helium Cell",
+  "block.ie.helium_thermoelement": "Helium Thermoelement",
 
   "ie:gui.progress": "Progress:",
 

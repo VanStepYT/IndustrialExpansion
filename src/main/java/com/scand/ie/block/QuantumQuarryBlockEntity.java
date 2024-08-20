@@ -41,7 +41,7 @@ public class QuantumQuarryBlockEntity extends BaseTileEntity implements
 
     protected final ContainerData data;
     private int EU = 0;
-    private int maxEU = 1000000;
+    private int maxEU = 100000;
 
     private final ItemStackHandler itemHandler = new ItemStackHandler(18){
         @Override
@@ -173,7 +173,7 @@ public class QuantumQuarryBlockEntity extends BaseTileEntity implements
         Item item = items.get(0).getItem();*/
         List<Item> items = List.of(Items.RAW_IRON,Items.RAW_GOLD,Items.RAW_COPPER, IC2Items.RAW_ALUMINIUM,
                 IC2Items.RAW_SILVER,IC2Items.RAW_TIN,Items.DIAMOND,Items.COAL,Items.REDSTONE,
-                Items.LAPIS_LAZULI,Items.EMERALD);
+                Items.LAPIS_LAZULI,Items.EMERALD, IC2Items.ORE_URANIUM_DROP);
         Item item = items.get(new Random().nextInt(items.size()));
 
 

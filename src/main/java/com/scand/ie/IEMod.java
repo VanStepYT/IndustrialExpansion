@@ -6,12 +6,17 @@ import com.scand.ie.block.ModBlockEntities;
 import com.scand.ie.block.ModBlocks;
 import com.scand.ie.screen.ModMenuTypes;
 import com.scand.ie.screen.QuantumQuarryScreen;
+import ic2.core.IC2;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.IConfigSpec;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -23,11 +28,14 @@ public class IEMod
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "ie";
+    public static CreativeModeTab IE = new IEItemGroup();;
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+
     public IEMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
 
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
@@ -36,9 +44,13 @@ public class IEMod
         ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON,Config.SPEC, "ie-common.toml");
+
         MinecraftForge.EVENT_BUS.register(this);
     }
-    private void commonSetup(final FMLCommonSetupEvent event){
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        IERecipes.init();
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent

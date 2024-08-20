@@ -26,11 +26,11 @@ public class IridiumFabricatorTile extends BaseElectricTileEntity implements ITi
     public int progress;
 
     public IridiumFabricatorTile(BlockPos pos, BlockState state) {
-        super(pos, state, 1, 131072, 30001000);
+        super(pos, state, 1, 131072, 7001000);
         this.listeners = new CapabilityCache(this, DirectionList.ALL, IC2Classic.NOTIFY_CAPABILITY);
         this.addedToEnet = false;
         this.maxInput = 131072;
-        this.maxEnergy = 30000000;
+        this.maxEnergy = 7000000;
         this.tier = EnergyNet.INSTANCE.getTierFromPower(maxInput);
         this.baseTier = this.tier;
     }

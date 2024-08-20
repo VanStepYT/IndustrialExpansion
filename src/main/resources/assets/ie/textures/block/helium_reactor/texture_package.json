@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/helium_reactor/side",
+  "down": "ie:block/helium_reactor/down",
+  "up": "ie:block/helium_reactor/up",
+  "west": "ie:block/helium_reactor/side",
+  "east": "ie:block/helium_reactor/side",
+  "south": "ie:block/helium_reactor/side"
+}

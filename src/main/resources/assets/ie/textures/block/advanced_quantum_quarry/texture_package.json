@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/advanced_quantum_quarry/side",
+  "down": "ie:block/advanced_quantum_quarry/down",
+  "up": "ie:block/advanced_quantum_quarry/up",
+  "west": "ie:block/advanced_quantum_quarry/side",
+  "east": "ie:block/advanced_quantum_quarry/side",
+  "south": "ie:block/advanced_quantum_quarry/side"
+}

@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/electric_boiler/side",
+	"down": "ie:block/electric_boiler/bottom",
+	"up": "ie:block/electric_boiler/top",
+	"west": "ie:block/electric_boiler/side",
+	"east": "ie:block/electric_boiler/side",
+	"south": "ie:block/electric_boiler/front_inactive"
+}

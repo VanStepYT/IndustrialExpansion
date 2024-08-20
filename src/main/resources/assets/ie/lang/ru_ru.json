@@ -8,6 +8,20 @@
   "item.ie.dark_matter_shard": "Кусочек Тёмной Материи",
   "item.ie.dark_matter": "Тёмная Материя",
 
+  "item.ie.uranium_rod_iridium_single": "Одинарный Стержнень Иридиево-обогащённого урана",
+  "item.ie.uranium_rod_iridium_dual": "Двойной Стержнень Иридиево-обогащённого урана",
+  "item.ie.uranium_rod_iridium_quad": "Четверной Стержнень Иридиево-обогащённого урана",
+  "item.ie.uranium_rod_iridium_octo": "Восмерной Стержнень Иридиево-обогащённого урана",
+  "item.ie.uranium_rod_iridium_hexodecimal": "Шестнадцатиричный Стержнень Иридиево-обогащённого урана",
+
+  "item.ie.heat_vent_iridium": "Иридиевый Теплоотвод",
+  "item.ie.steam_vent_iridium": "Иридиевый Пароотвод",
+  "item.ie.electric_vent_iridium": "Иридиевый Электрический Теплоотвод",
+
+  "item.ie.heat_storage_eighteen": "Охлаждающий стержень 180K",
+  "item.ie.heat_storage_fifty": "Охлаждающий стержень 540K",
+  "item.ie.heat_storage_iridium": "Иридиевый Охлаждающий стержень",
+
   "item.ie.singularity_circuit": "Электросхема Сингулярности",
   "item.ie.spectral_circuit": "Спектральная Электросхема",
   "item.ie.quantum_circuit": "Квантовая Электросхема",
@@ -32,10 +46,30 @@
   "item.ie.singularity_crystal": "Кристалл Сингулярности",
   "item.ie.fly_module": "Моудль \"Полёт\"",
 
+  "item.ie.basic_day_component": "Базовый Солнечный Компонент",
+  "item.ie.basic_night_component": "Базовый Ночной Компонент",
+  "item.ie.advanced_day_component": "Продвинутый Солнечный Компонент",
+  "item.ie.advanced_night_component": "Продвинутый Ночной Компонент",
+  "item.ie.overclocked_day_component": "Разогнанный Солнечный Компонент",
+  "item.ie.overclocked_night_component": "Разогнанный Ночной Компонент",
+
+  "item.ie.basic_solar_cooler": "Базовый Солнечный Охладитель",
+  "item.ie.advanced_solar_cooler": "Продвинутый Солнечный Охладитель",
+  "item.ie.overclocked_solar_cooler": "Разогнанный Солнечный Охладитель",
+
+  "item.ie.solar_preventer": "Предохранитель Солнечного Реактора",
+
   "tooltip.item.ie.multi_mode.normal": "Режим Копания: 1x1",
   "tooltip.item.ie.multi_mode.big": "Режим Копания: 3x3",
   "tooltip.item.ie.multi_mode.advbig": "Режим Копания: 5x5",
   "tooltip.item.ie.multi_mode.superbig": "Режим Копания: 7x7",
+
+  "tooltip.ie.solar_heat": "[Температура Солнечного Реактора]: ",
+  "tooltip.ie.solar_cooling": "[Охлаждение Солнечного Реактора]: ",
+  "tooltip.ie.solar_heating": "[Нагрев Солнечного Реактора]: ",
+  "tooltip.ie.solar_production": "[Генерация Энергии Солнечного Реактора]: ",
+  "tooltip.ie.solar_stable": "[Солнечный Реактор Стабилен?]: Да!",
+  "tooltip.ie.solar_nonstable": "[Солнечный Реактор Стабилен?]: Нет!",
 
   "item.ie.quantum_drill": "Квантовый Бур",
   "item.ie.nano_drill": "Нано Бур",
@@ -47,6 +81,7 @@
   "item.ie.spectral_suit_boots": "Спектральные Ботинки",
 
   "block.ie.quantum_quarry": "Квантовый Карьер",
+  "block.ie.advanced_quantum_quarry": "Продвинутый Квантовый Карьер",
   "block.ie.nano_machine_casing": "Нано Машинный Корпус",
   "block.ie.quantum_machine_casing": "Квантовый Машинный Корпус",
   "block.ie.spectral_machine_casing": "Спектральный Машинный Корпус",
@@ -55,6 +90,10 @@
   "item.ie.singularity": "Сингулярность",
   "item.ie.singularity_shard": "Осколок Сингулярности",
   "item.ie.inverted_singularity": "Инвертированная Сингулярность",
+
+  "item.ie.silicon": "Кремний",
+
+  "block.ie.speed_extraction_tube": "Разогнанная Труба Экспорта",
 
   "block.ie.ies_transporter": "МЭХ Проводник",
   "block.ie.ies_splitter": "МЭХ Разделитель",
@@ -76,6 +115,11 @@
   "block.ie.singularium_compressor": "Сжиматель Сингулярности",
   "block.ie.singularium_macerator": "Дробитель Сингулярности",
   "block.ie.singularium_extractor": "Экстрактор Сингулярности",
+
+  "block.ie.mass_multiplier": "Мультипликатор Материи",
+  "block.ie.iridium_cable": "Иридиевый Провод",
+
+  "block.ie.solar_reactor": "Солнечный Реактор",
 
   "block.ie.advanced_lv_panel": "Продвинутая Солнечная Панель НН",
   "block.ie.advanced_mv_panel": "Продвинутая Солнечная Панель СН",

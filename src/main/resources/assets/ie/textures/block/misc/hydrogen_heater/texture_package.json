@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/misc/hydrogen_heater/side",
+  "down": "ie:block/misc/hydrogen_heater/down",
+  "up": "ie:block/misc/hydrogen_heater/up",
+  "west": "ie:block/misc/hydrogen_heater/side",
+  "east": "ie:block/misc/hydrogen_heater/side",
+  "south": "ie:block/misc/hydrogen_heater/side"
+}

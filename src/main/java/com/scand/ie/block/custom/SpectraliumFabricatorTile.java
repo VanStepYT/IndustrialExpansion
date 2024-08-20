@@ -30,6 +30,7 @@ public class SpectraliumFabricatorTile extends BaseElectricTileEntity implements
         this.listeners = new CapabilityCache(this, DirectionList.ALL, IC2Classic.NOTIFY_CAPABILITY);
         this.addedToEnet = false;
         this.maxInput =  8388608;
+        this.progress=0;
         this.maxEnergy = 300000000;
         this.tier = EnergyNet.INSTANCE.getTierFromPower(maxInput);
         this.baseTier = this.tier;
@@ -68,8 +69,12 @@ public class SpectraliumFabricatorTile extends BaseElectricTileEntity implements
     @Override
     public void onTick() {
         if(this.energy>=this.maxEnergy){
-            this.setOrGrow(0,new ItemStack(ModItems.SPECTRALIUM.get()), false);
+            this.progress++;
             this.energy=0;
+        }
+        if(this.progress >= 1){
+            this.setOrGrow(0,new ItemStack(ModItems.SPECTRALIUM.get()), false);
+            this.progress = 0;
         }
     }
 

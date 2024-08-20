@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/misc/helium_cooler/side",
+  "down": "ie:block/misc/helium_cooler/down",
+  "up": "ie:block/misc/helium_cooler/up",
+  "west": "ie:block/misc/helium_cooler/side",
+  "east": "ie:block/misc/helium_cooler/side",
+  "south": "ie:block/misc/helium_cooler/side"
+}

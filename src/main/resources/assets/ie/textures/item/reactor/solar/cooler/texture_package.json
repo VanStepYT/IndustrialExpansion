@@ -1,0 +1,5 @@
+{
+  "basic": "ie:item/reactor/solar/cooler/basic",
+  "advanced": "ie:item/reactor/solar/cooler/advanced",
+  "overclocked": "ie:item/reactor/solar/cooler/overclocked"
+}

@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/hydrogen_reactor/side",
+  "down": "ie:block/hydrogen_reactor/down",
+  "up": "ie:block/hydrogen_reactor/up",
+  "west": "ie:block/hydrogen_reactor/side",
+  "east": "ie:block/hydrogen_reactor/side",
+  "south": "ie:block/hydrogen_reactor/side"
+}

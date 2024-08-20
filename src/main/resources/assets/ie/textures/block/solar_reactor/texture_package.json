@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/solar_reactor/side",
+  "active_down": "ie:block/solar_reactor/down",
+  "active_up": "ie:block/solar_reactor/up_active",
+  "active_west": "ie:block/solar_reactor/side",
+  "active_east": "ie:block/solar_reactor/side",
+  "active_south": "ie:block/solar_reactor/side",
+
+  "inactive_north": "ie:block/solar_reactor/side_inactive",
+  "inactive_down": "ie:block/solar_reactor/down",
+  "inactive_up": "ie:block/solar_reactor/up_inactive",
+  "inactive_west": "ie:block/solar_reactor/side_inactive",
+  "inactive_east": "ie:block/solar_reactor/side_inactive",
+  "inactive_south": "ie:block/solar_reactor/side_inactive"
+}

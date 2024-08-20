@@ -1,0 +1,5 @@
+{
+  "speed_extraction_open": "ie:block/transport/tube/speed_extraction_open",
+  "speed_extraction_closed": "ie:block/transport/tube/speed_extraction_closed",
+  "speed_extraction_priority": "ie:block/transport/tube/speed_extraction_priority"
+}
