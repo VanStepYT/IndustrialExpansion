@@ -6,6 +6,7 @@ import com.scand.ie.block.ModBlockEntities;
 import com.scand.ie.block.ModBlocks;
 import com.scand.ie.screen.ModMenuTypes;
 import com.scand.ie.screen.QuantumQuarryScreen;
+import ic2.core.platform.recipes.misc.AdvRecipeRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,6 +26,7 @@ public class IEMod
     public static final String MOD_ID = "ie";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+
     public IEMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -38,7 +40,9 @@ public class IEMod
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
-    private void commonSetup(final FMLCommonSetupEvent event){
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        IERecipes.init();
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
