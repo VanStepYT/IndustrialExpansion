@@ -148,9 +148,12 @@
   "block.ie.helium_cooler": "Helium Cooler",
   "block.ie.helium_heater": "Helium Heater",
   "item.ie.helium_cell": "Helium Cell",
+  "item.ie.solar_rector_reader": "Solar Reactor Reader",
   "block.ie.helium_thermoelement": "Helium Thermoelement",
 
   "ie:gui.progress": "Progress:",
 
-  "death.attack.black_hole": "%1$s turned into spaghetti"
+  "death.attack.black_hole": "%1$s turned into spaghetti",
+
+  "block.ie.autofarm": "Autofarm"
 }

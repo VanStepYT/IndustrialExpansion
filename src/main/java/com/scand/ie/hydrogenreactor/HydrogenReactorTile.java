@@ -56,7 +56,7 @@ public class HydrogenReactorTile extends BaseGeneratorTileEntity implements IEUP
         super(pos, state, 2);
         this.addCapability(ForgeCapabilities.FLUID_HANDLER, this);
         this.tier = 5;
-        this.multi = 128;
+        this.multi = 32;
         this.maxStorage = 1310720;
         this.production=0;
         this.counter = 0;
@@ -122,7 +122,7 @@ public class HydrogenReactorTile extends BaseGeneratorTileEntity implements IEUP
             if (this.inventory.get(0).getCount() > 0){
                 this.production = Math.round(heat*this.multi);
                 this.counter++;
-                if (this.counter%20000/heat*30 == 0){
+                if (this.counter%200 == 0){
                     this.setOrGrow(1, new ItemStack(ModItems.HYDROGEN_CELL.get(), 1), true);
                     this.inventory.get(0).shrink(1);
                     this.counter = 0;

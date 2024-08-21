@@ -135,6 +135,23 @@
   "block.ie.iuv_transformer": "Трансформатор НМУН",
   "block.ie.advanced_adjustable_transformer": "Продвинутый Регулируемый Трансформатор",
 
+  "block.ie.hydrogen_reactor": "Водородный реактор",
+  "block.ie.hydrogen_cooler": "Водородный Охладитель",
+  "block.ie.hydrogen_heater": "Водородный Нагреватель",
+  "item.ie.hydrogen_cell": "Капсула Водорода",
+  "block.ie.aluminium_thermoelement": "Алюминиевый Термоэлемент",
+  "block.ie.silver_thermoelement": "Серебрянный Термоэлемент",
+
+  "block.ie.helium_reactor": "Гелиевый реактор",
+  "block.ie.helium_cooler": "Гелиевый Охладитель",
+  "block.ie.helium_heater": "Гелиевый Нагреватель",
+  "item.ie.helium_cell": "Капсула Гелия",
+  "item.ie.solar_rector_reader": "Считыватель Солнечного Реактора",
+  "block.ie.helium_thermoelement": "Гелиевый Термоэлемент",
+
   "ie:gui.progress": "Прогресс:",
-  "death.attack.black_hole": "%1$s превратился в спагетти"
+  "death.attack.black_hole": "%1$s превратился в спагетти",
+
+  "block.ie.autofarm": "Автоферма"
+
 }

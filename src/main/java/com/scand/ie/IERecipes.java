@@ -3,7 +3,9 @@ package com.scand.ie;
 import com.scand.ie.ModItems.ModItems;
 import com.scand.ie.block.ModBlocks;
 import ic2.api.recipes.registries.IAdvancedCraftingManager;
+import ic2.api.recipes.registries.IMachineRecipeList;
 import ic2.core.IC2;
+import ic2.core.block.machines.recipes.MachineRecipeList;
 import ic2.core.platform.recipes.misc.AdvRecipeRegistry;
 import ic2.core.platform.registries.IC2Blocks;
 import ic2.core.platform.registries.IC2Items;
@@ -11,19 +13,62 @@ import ic2.core.platform.registries.IC2Recipes;
 import ic2.core.platform.registries.IC2Tags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.datafix.fixes.RecipesFix;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 public class IERecipes {
+    public static final MachineRecipeList AUTOFARM = new MachineRecipeList("autofarm",IERecipes::initAutofarmRecipes){
+        public void addDublicationRecipe(ResourceLocation rl, ItemStack items){
+            addSimpleRecipe(rl, items, items);
+        }
+    };
 
     public static void init() {
+        IC2.RECIPES.get(true).getLists().add(AUTOFARM);
+        if (FMLEnvironment.dist.isClient()) {
+            IC2.RECIPES.get(false).getLists().add(AUTOFARM);
+        }
+        IC2.RECIPES.get(true).macerator.registerListener(r -> AUTOFARM.reload());
+
         AdvRecipeRegistry.INSTANCE.registerListener(IERecipes::initCraftingRecipes);
         initMachineRecipes();
+    }
+    private static void initAutofarmRecipes(IMachineRecipeList list){
+        list.addSimpleRecipe(rl("oak_farming"), new ItemStack(Items.OAK_LOG), new ItemStack(Items.OAK_SAPLING));
+        list.addSimpleRecipe(rl("camman_angering"), new ItemStack(Items.BIRCH_LOG), new ItemStack(Items.BIRCH_SAPLING));
+        list.addSimpleRecipe(rl("acacia_farming"), new ItemStack(Items.ACACIA_LOG), new ItemStack(Items.ACACIA_SAPLING));
+        list.addSimpleRecipe(rl("dark_oak_farming"), new ItemStack(Items.DARK_OAK_LOG), new ItemStack(Items.DARK_OAK_SAPLING));
+        list.addSimpleRecipe(rl("spruce_farming"), new ItemStack(Items.SPRUCE_LOG), new ItemStack(Items.SPRUCE_SAPLING));
+        list.addSimpleRecipe(rl("resin_farming"), new ItemStack(IC2Items.STICKY_RESIN), new ItemStack(IC2Blocks.RUBBER_SAPLING));
+        list.addSimpleRecipe(rl("carrot_farming"), new ItemStack(Items.CARROT), new ItemStack(Items.CARROT));
+        list.addSimpleRecipe(rl("potato_farming"), new ItemStack(Items.POTATO), new ItemStack(Items.POTATO));
+        list.addSimpleRecipe(rl("wheat_farming"), new ItemStack(Items.WHEAT), new ItemStack(Items.WHEAT_SEEDS));
+        list.addSimpleRecipe(rl("sugarcane_farming"), new ItemStack(Items.SUGAR_CANE), new ItemStack(Items.SUGAR_CANE));
+        list.addSimpleRecipe(rl("bamboo_farming"), new ItemStack(Items.BAMBOO), new ItemStack(Items.BAMBOO));
     }
 
     public static void initCraftingRecipes(IAdvancedCraftingManager manager) {
         //SolarStuff2
+        manager.addShapedRecipe(rl("autofarm"),
+                new ItemStack(ModBlocks.AUTOFARM.get().asItem()),
+                "ABA", "CDC", "EFG",
+                'A', IC2Blocks.LUMINATOR,
+                'B', ModItems.SILICON.get(),
+                'C', IC2Items.CELL_WATER,
+                'D', IC2Blocks.MACHINE_BLOCK,
+                'E', Items.WHEAT_SEEDS,
+                'F', IC2Items.ADVANCED_CIRCUIT,
+                'G', Items.IRON_HOE);
+
+        manager.addShapedRecipe(rl("solar_reactor_reader"),
+                ModItems.SOLAR_REACTOR_READER.get().getDefaultInstance(),
+                "ABC",
+                'A', ModItems.SILICON.get(),
+                'B', IC2Items.EU_READER,
+                'C', IC2Items.FREQUENCY_TRANSMITTER);
 
         manager.addShapedRecipe(rl("adva_solar_reactor_cooling_component"),
                 ModItems.SOLAR_COOLER_ADVANCED.get().getDefaultInstance(),
@@ -142,14 +187,14 @@ public class IERecipes {
         //  heat
         manager.addShapedRecipe(rl("hydrogen_heater"),
                 new ItemStack(ModBlocks.HYDROGEN_HEATER.get()),
-                "ABA", "BCB", "ABA",
+                "A", "C", "B",
                 'B', IC2Blocks.STABILIZED_MACHINE_BLOCK,
                 'A', IC2Items.CELL_LAVA,
                 'C', IC2Blocks.GENERATOR);
 
         manager.addShapedRecipe(rl("helium_heater"),
                 new ItemStack(ModBlocks.HELIUM_HEATER.get()),
-                "ABA", "BCB", "ABA",
+                "A", "C", "B",
                 'B', ModBlocks.NANO_MACHINE_CASING.get(),
                 'A', IC2Items.CELL_BLAZING_LAVA,
                 'C', IC2Blocks.GEOTHERMAL_GENERATOR);
@@ -157,14 +202,14 @@ public class IERecipes {
         // cold
         manager.addShapedRecipe(rl("hydrogen_cooler"),
                 new ItemStack(ModBlocks.HYDROGEN_COOLER.get()),
-                "ABA", "BCB", "ABA",
+                "A", "C", "B",
                 'B', IC2Blocks.STABILIZED_MACHINE_BLOCK,
                 'A', IC2Items.CELL_WATER,
                 'C', IC2Blocks.PUMP);
 
         manager.addShapedRecipe(rl("helium_cooler"),
                 new ItemStack(ModBlocks.HELIUM_COOLER.get()),
-                "ABA", "BCB", "ABA",
+                "A", "C", "B",
                 'B', ModBlocks.NANO_MACHINE_CASING.get(),
                 'A', ModItems.HELIUM_CELL.get(),
                 'C', IC2Blocks.OVERCLOCKED_PUMP);

@@ -2,6 +2,7 @@ package com.scand.ie.block;
 
 import com.scand.ie.IEMod;
 import com.scand.ie.ModItems.ModItems;
+import com.scand.ie.block.custom.AutoFarmTile;
 import com.scand.ie.block.custom.IridiumFabricatorTile;
 import com.scand.ie.block.custom.MassMultiplicator;
 import com.scand.ie.block.custom.SpectraliumFabricatorTile;
@@ -116,6 +117,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> QUANTUM_QUARRY = registerBlock("quantum_quarry",
             () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2.5f, 18).requiresCorrectToolForDrops()),
             IEMod.IE);;
+
+    public static final BlockEntityType<AutoFarmTile> AUTO_FARM_TILE = IC2Tiles.createTile("autofarm", AutoFarmTile::new);
+
 
 
     public static final RegistryObject<Block> ADVANCED_QUANTUM_QUARRY = registerBlock("advanced_quantum_quarry",
@@ -328,6 +332,11 @@ public class ModBlocks {
             "electric/cable", ModBlocks::getIridiumDrop).addTextures(new String[]{"iridium"});
     public static final RegistryObject<Block> IRIDIUM_CABLE = registerBlock("iridium_cable",
             ()-> IridiumCableClass.createBlock("iridium_cable",IRIDIUM_CABLE_INSTANCE,IRIDIUM_CABLE_TYPE),
+            IEMod.IE);
+
+    public static final RegistryObject<Block> AUTOFARM = registerBlock("autofarm",
+            () -> new BaseMachineBlock("autofarm", IBlockDropProvider.SELF_OR_ADV_MACHINE,
+                    ITextureProvider.toggle(IEMod.MOD_ID, "autofarm"),AUTO_FARM_TILE),
             IEMod.IE);
 
 

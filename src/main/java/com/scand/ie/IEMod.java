@@ -7,6 +7,8 @@ import com.scand.ie.block.ModBlocks;
 import com.scand.ie.screen.ModMenuTypes;
 import com.scand.ie.screen.QuantumQuarryScreen;
 import ic2.core.IC2;
+import ic2.core.platform.recipes.misc.GlobalRecipes;
+import ic2.core.utils.SidedGateway;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,7 +30,7 @@ public class IEMod
 {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "ie";
-    public static CreativeModeTab IE = new IEItemGroup();;
+    public static CreativeModeTab IE = new IEItemGroup();
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 

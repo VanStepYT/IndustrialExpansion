@@ -50,7 +50,7 @@ public class HeliumReactorTile extends BaseGeneratorTileEntity implements IEUPro
         super(pos, state, 2);
         this.addCapability(ForgeCapabilities.FLUID_HANDLER, this);
         this.tier = 5;
-        this.multi = 128;
+        this.multi = 96;
         this.maxStorage = 1310720;
         this.production=0;
         this.counter = 0;
@@ -124,7 +124,7 @@ public class HeliumReactorTile extends BaseGeneratorTileEntity implements IEUPro
             if (this.inventory.get(0).getCount() > 4){
                 this.production = Math.round(heat*this.multi);
                 this.counter++;
-                if (this.counter%200000/heat*30 == 0){
+                if (this.counter%2000 == 0){
                     this.setOrGrow(1, new ItemStack(ModItems.HELIUM_CELL.get(), 2), true);
                     this.inventory.get(0).shrink(5);
                     this.counter = 0;
