@@ -63,7 +63,7 @@ public class HeliumReactorTile extends BaseGeneratorTileEntity implements IEUPro
 
     @Override
     public BlockEntityType<?> createType() {
-        return ModBlocks.HYDROGEN_REACTOR_TYPE;
+        return ModBlocks.HELIUM_REACTOR_TYPE;
     }
 
 

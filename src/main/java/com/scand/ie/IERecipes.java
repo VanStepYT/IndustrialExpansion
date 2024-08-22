@@ -63,6 +63,22 @@ public class IERecipes {
                 'F', IC2Items.ADVANCED_CIRCUIT,
                 'G', Items.IRON_HOE);
 
+        manager.addShapedRecipe(rl("nano_wrench"),
+                ModItems.NANO_WRENCH.get().getDefaultInstance(),
+                "ABA", "CDC", "ABA",
+                'A', ModItems.NANO_CIRCUIT.get(),
+                'B', IC2Items.PRECISION_WRENCH,
+                'C', IC2Items.PLATE_IRIDIUM,
+                'D', ModItems.DENSE_CARBON_PLATE.get());
+
+        manager.addShapedRecipe(rl("quantum_wrench"),
+                ModItems.QUANTUM_WRENCH.get().getDefaultInstance(),
+                "ABA", "CDC", "ABA",
+                'A', ModItems.QUANTUM_CIRCUIT.get(),
+                'B', ModItems.NANO_WRENCH.get(),
+                'C', ModItems.DENSE_IRIDIUM_PLATE.get(),
+                'D', IC2Items.PLATE_IRIDIUM);
+
         manager.addShapedRecipe(rl("solar_reactor_reader"),
                 ModItems.SOLAR_REACTOR_READER.get().getDefaultInstance(),
                 "ABC",
@@ -304,9 +320,9 @@ public class IERecipes {
                 ModItems.QUANTUM_CIRCUIT.get().getDefaultInstance(),
                 "CPC", "S#S", "CPC",
                 'C', IC2Items.PLASMA_CABLE,
-                'S', IC2Items.TOOL_BOX_IRIDIUM,
+                'S', ModItems.HELIUM_CELL.get(),
                 '#', ModItems.NANO_CIRCUIT.get(),
-                'P', IC2Items.PLATE_IRIDIUM);
+                'P', ModItems.DENSE_IRIDIUM_PLATE);
 
         manager.addShapedRecipe(rl("nano_circuit"),
                 ModItems.NANO_CIRCUIT.get().getDefaultInstance(),
@@ -314,7 +330,7 @@ public class IERecipes {
                 'C', IC2Items.GLASSFIBER_CABLE,
                 'S', IC2Items.TOOL_BOX_CARBON,
                 '#', IC2Items.COMPLEX_CIRCUIT,
-                'P', IC2Items.CARBON_PLATE);
+                'P', ModItems.DENSE_CARBON_PLATE.get());
 
         manager.addShapedRecipe(rl("spectral_crafting_component"),
                 ModItems.SPECTRAL_CRAFTING_COMPONENT.get().getDefaultInstance(),
@@ -339,7 +355,7 @@ public class IERecipes {
         manager.addShapedRecipe(rl("nano_drill"),
                 ModItems.NANO_DRILL.get().getDefaultInstance(),
                 "PCP", "CTC", "PBP",
-                'P', IC2Items.CARBON_PLATE,
+                'P', ModItems.DENSE_CARBON_PLATE.get(),
                 'T', IC2Items.DRILL_ADVANCED,
                 'B', IC2Items.TOOL_BOX_CARBON,
                 'C', ModItems.NANO_CIRCUIT.get());
@@ -569,7 +585,7 @@ public class IERecipes {
                 "CPC", "TMT", "CPC",
                 'P', ModItems.HIGHLY_ADVANCED_ALLOY.get(),
                 'C', IC2Items.CARBON_PLATE,
-                'T', IC2Items.TOOL_BOX_CARBON,
+                'T', ModItems.DENSE_CARBON_PLATE.get(),
                 'M', IC2Blocks.STABILIZED_MACHINE_BLOCK);
 
         manager.addShapedRecipe(rl("quantum_machine_casing"),
@@ -699,6 +715,7 @@ public class IERecipes {
                 'Q', ModBlocks.NEUTRON_CABLE.get(),
                 'M', ModBlocks.HUTESU.get(),
                 'P', ModItems.SINGULARITY_CRYSTAL.get());
+        manager.removeCraftingRecipe(new ResourceLocation("ic2","precision_wrench_lossless"));
     }
 
     public static void initMachineRecipes() {
@@ -707,6 +724,8 @@ public class IERecipes {
             r.addSimpleRecipe(rl("inversed_singularity"), new ItemStack(ModItems.INVERTED_SINGULARITY.get()), new ItemStack(ModItems.SINGULARITY.get(), 16));
             r.addSimpleRecipe(rl("singularium"), new ItemStack(ModItems.SINGULARIUM.get()), new ItemStack(ModItems.DARK_MATTER.get(), 4));
             r.addSimpleRecipe(rl("silicon"), new ItemStack(ModItems.SILICON.get()), new ItemStack(Items.QUARTZ, 1));
+            r.addSimpleRecipe(rl("empty_hydrogen"), new ItemStack(IC2Items.CELL_EMPTY), new ItemStack(ModItems.HYDROGEN_CELL.get(), 1));
+            r.addSimpleRecipe(rl("empty_helium"), new ItemStack(ModItems.HYDROGEN_CELL.get()), new ItemStack(ModItems.HELIUM_CELL.get(), 1));
         });
 
         IC2.RECIPES.get(true).macerator.registerListener(r -> {
@@ -720,6 +739,8 @@ public class IERecipes {
             r.addSimpleRecipe(rl("iridium_cable"), new ItemStack(ModBlocks.IRIDIUM_CABLE.get()), new ItemStack(IC2Items.PLATE_IRIDIUM));
             r.addSimpleRecipe(rl("photon_cable"), new ItemStack(ModBlocks.PHOTON_CABLE.get()), new ItemStack(ModItems.SPECTRAL_PLATE.get()));
             r.addSimpleRecipe(rl("singularity"), new ItemStack(ModItems.SINGULARITY.get()), new ItemStack(ModItems.SINGULARITY_SHARD.get(), 9));
+            r.addSimpleRecipe(rl("dense_carbon_plate"), new ItemStack(ModItems.DENSE_CARBON_PLATE.get()), new ItemStack(IC2Items.CARBON_PLATE, 9));
+            r.addSimpleRecipe(rl("dense_iridium_plate"), new ItemStack(ModItems.DENSE_IRIDIUM_PLATE.get()), new ItemStack(IC2Items.PLATE_IRIDIUM, 9));
         });
     }
 

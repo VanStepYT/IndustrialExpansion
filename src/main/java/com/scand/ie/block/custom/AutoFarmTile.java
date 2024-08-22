@@ -19,7 +19,7 @@ public class AutoFarmTile extends BasicMachineTileEntity {
     public static final ResourceLocation TEXTURE = new ResourceLocation("ie", "textures/gui/gui_autofarm.png");
 
     public AutoFarmTile(BlockPos pos, BlockState state) {
-        super(pos, state, 3, 64, 512, 256);
+        super(pos, state, 3, 64, 512, 2048);
     }
 
     @Override

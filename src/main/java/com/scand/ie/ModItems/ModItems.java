@@ -7,9 +7,7 @@ import com.scand.ie.block.ModBlocks;
 import com.scand.ie.block.custom.solar_reactor.SolarReactorComponent;
 import com.scand.ie.block.custom.solar_reactor.SolarReactorCooler;
 import com.scand.ie.block.custom.solar_reactor.SolarReactorPreventer;
-import com.scand.ie.tools.NanoDrill;
-import com.scand.ie.tools.QuantumDrill;
-import com.scand.ie.tools.SpectralDrill;
+import com.scand.ie.tools.*;
 import ic2.core.block.base.misc.color.IColorListener;
 import ic2.core.item.base.IC2SimpleItem;
 import ic2.core.item.base.PropertiesBuilder;
@@ -114,6 +112,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPECTRAL_DRILL = ITEMS.register("spectral_drill",
             SpectralDrill::new);
+
+    public static final RegistryObject<Item> NANO_WRENCH = ITEMS.register("nano_wrench",
+            NanoWrench::new);
+    public static final RegistryObject<Item> QUANTUM_WRENCH = ITEMS.register("quantum_wrench",
+            QuantumWrench::new);
+
+
+
+
+    public static final RegistryObject<Item> DENSE_CARBON_PLATE = ITEMS.register("dense_carbon_plate",
+            ()-> new Item(new Item.Properties().tab(IEMod.IE)));
+    public static final RegistryObject<Item> DENSE_IRIDIUM_PLATE = ITEMS.register("dense_iridium_plate",
+            ()-> new Item(new Item.Properties().tab(IEMod.IE)));
+
+
 
     public static final RegistryObject<Item> FLY_MODULE = ITEMS.register("fly_module",
             ()->new FlyModule("armor/modules","fly"));
