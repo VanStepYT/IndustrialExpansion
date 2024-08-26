@@ -1,11 +1,9 @@
 package com.scand.ie.block;
 
 import com.scand.ie.IEMod;
+import com.scand.ie.IModBlockDropProvider;
 import com.scand.ie.ModItems.ModItems;
-import com.scand.ie.block.custom.AutoFarmTile;
-import com.scand.ie.block.custom.IridiumFabricatorTile;
-import com.scand.ie.block.custom.MassMultiplicator;
-import com.scand.ie.block.custom.SpectraliumFabricatorTile;
+import com.scand.ie.block.custom.*;
 import com.scand.ie.block.custom.solar_reactor.SolarReactorBlock;
 import com.scand.ie.block.custom.solar_reactor.SolarReactorTile;
 import com.scand.ie.block.custom.tubes.SpeedExtractionTube;
@@ -21,6 +19,9 @@ import com.scand.ie.block.custom.machines.singularium.SingulariumExtractor;
 import com.scand.ie.block.custom.machines.singularium.SingulariumFurnace;
 import com.scand.ie.block.custom.machines.singularium.SingulariumMacerator;
 import com.scand.ie.block.custom.whitehole.*;
+import com.scand.ie.block.custom.wind.AdvancedWindmillTileEntity;
+import com.scand.ie.block.custom.wind.WindFarmBlock;
+import com.scand.ie.block.custom.wind.WindFarmTileEntity;
 import com.scand.ie.block.entity.*;
 import com.scand.ie.hydrogenreactor.HeliumReactorBlock;
 import com.scand.ie.hydrogenreactor.HeliumReactorTile;
@@ -32,9 +33,12 @@ import ic2.core.block.base.blocks.BaseTexturedBlock;
 import ic2.core.block.base.drops.IBlockDropProvider;
 import ic2.core.block.cables.CableBlock;
 import ic2.core.block.generators.BaseGeneratorBlock;
+import ic2.core.block.generators.containers.WindmillContainer;
 import ic2.core.block.machines.BaseMachineBlock;
+import ic2.core.block.machines.ColossalMachineBlock;
 import ic2.core.block.misc.MachineBlock;
 import ic2.core.block.misc.textured.TexturedBlockBlock;
+import ic2.core.block.multi.BaseMultiBlock;
 import ic2.core.platform.registries.IC2Blocks;
 import ic2.core.platform.registries.IC2Tiles;
 import ic2.core.platform.rendering.features.ITextureProvider;
@@ -88,12 +92,6 @@ public class ModBlocks {
 
     public static final BlockEntityType<HeliumReactorTile> HELIUM_REACTOR_TYPE =
             IC2Tiles.createTile("helium_reactor", HeliumReactorTile::new);
-    public static final BlockEntityType<AdvancedLVPanelTile> ADVANCED_LV_PANEL_TYPE = IC2Tiles.createTile("advanced_lv_solar_panel", AdvancedLVPanelTile::new);
-    public static final BlockEntityType<AdvancedMVPanelTile> ADVANCED_MV_PANEL_TYPE = IC2Tiles.createTile("advanced_mv_solar_panel", AdvancedMVPanelTile::new);
-    public static final BlockEntityType<AdvancedHVPanelTile> ADVANCED_HV_PANEL_TYPE = IC2Tiles.createTile("advanced_hv_solar_panel", AdvancedHVPanelTile::new);
-    public static final BlockEntityType<AdvancedEVPanelTile> ADVANCED_EV_PANEL_TYPE = IC2Tiles.createTile("advanced_ev_solar_panel", AdvancedEVPanelTile::new);
-    public static final BlockEntityType<AdvancedLUVPanelTile> ADVANCED_LUV_PANEL_TYPE = IC2Tiles.createTile("advanced_luv_solar_panel", AdvancedLUVPanelTile::new);
-    public static final BlockEntityType<AdvancedUVPanelTile> ADVANCED_UV_PANEL_TYPE = IC2Tiles.createTile("advanced_uv_solar_panel", AdvancedUVPanelTile::new);
     public static final BlockEntityType<IridiumFabricatorTile> IRIDIUM_FABRICATOR_TYPE = IC2Tiles.createTile("iridium_fabricator", IridiumFabricatorTile::new);
     public static final BlockEntityType<PhotonCableTile> PHOTON_CABLE_TYPE = IC2Tiles.createTile("photon_cable", PhotonCableTile::new);
     public static final BlockEntityType<NeutronCableTile> NEUTRON_CABLE_TYPE = IC2Tiles.createTile("neutron_cable", NeutronCableTile::new);
@@ -114,12 +112,41 @@ public class ModBlocks {
     public static final BlockEntityType<ControllerTile> BLACK_HOLE_CONTROLLER_TYPE = IC2Tiles.createTile("black_hole_controller", ControllerTile::new);
     public static final BlockEntityType<StabilizerTile> BLACK_HOLE_STABILIZER_TYPE = IC2Tiles.createTile("black_hole_stabilizer", StabilizerTile::new);
 
+    public static final BlockEntityType<WindFarmTileEntity> ADVANCED_WINDMILL_TYPE = IC2Tiles.createTile("advanced_windmill", WindFarmTileEntity::new);
+
     public static final RegistryObject<Block> QUANTUM_QUARRY = registerBlock("quantum_quarry",
             () -> new QuantumQuarryBlock(BlockBehaviour.Properties.of(Material.METAL).strength(2.5f, 18).requiresCorrectToolForDrops()),
             IEMod.IE);;
 
     public static final BlockEntityType<AutoFarmTile> AUTO_FARM_TILE = IC2Tiles.createTile("autofarm", AutoFarmTile::new);
 
+    public static final RegistryObject<Block> ULV_PANEL = registerBlock("ulv_panel",
+            () -> new BaseGeneratorBlock("ulv_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","ulv_panel"), SolarPanels.ULV), IEMod.IE);
+
+    public static final RegistryObject<Block> LV_PANEL = registerBlock("lv_panel",
+            () -> new BaseGeneratorBlock("lv_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","lv_panel"), SolarPanels.LV), IEMod.IE);
+
+    public static final RegistryObject<Block> MV_PANEL = registerBlock("mv_panel",
+            () -> new BaseGeneratorBlock("mv_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","mv_panel"), SolarPanels.MV), IEMod.IE);
+
+    public static final RegistryObject<Block> HV_PANEL = registerBlock("hv_panel",
+            () -> new BaseGeneratorBlock("hv_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","hv_panel"), SolarPanels.HV), IEMod.IE);
+
+    public static final RegistryObject<Block> EV_PANEL = registerBlock("ev_panel",
+            () -> new BaseGeneratorBlock("ev_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","ev_panel"), SolarPanels.EV), IEMod.IE);
+
+    public static final RegistryObject<Block> IV_PANEL = registerBlock("iv_panel",
+            () -> new BaseGeneratorBlock("iv_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","iv_panel"), SolarPanels.IV), IEMod.IE);
+
+    public static final RegistryObject<Block> LUV_PANEL = registerBlock("luv_panel",
+            () -> new BaseGeneratorBlock("luv_panel", IBlockDropProvider.SELF,
+                    ITextureProvider.noState("ie","luv_panel"), SolarPanels.LuV), IEMod.IE);
 
 
     public static final RegistryObject<Block> ADVANCED_QUANTUM_QUARRY = registerBlock("advanced_quantum_quarry",
@@ -174,7 +201,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SPECTRAL_COMPRESSOR = registerBlock("spectral_compressor",
             () -> new BaseMachineBlock("spectral_compressor", IBlockDropProvider.SELF_OR_STABLE_MACHINE,
-                    ITextureProvider.toggle(IEMod.MOD_ID, "spectral_compressor"),SPECTRAL_COMPRESSOR_TYPE),
+                    ITextureProvider.toggle(IEMod.MOD_ID, "machine/spectral_compressor"),SPECTRAL_COMPRESSOR_TYPE),
             IEMod.IE);
 
     public static final RegistryObject<Block> SPECTRAL_FURNACE = registerBlock("spectral_furnace",
@@ -229,30 +256,6 @@ public class ModBlocks {
     
 
     //public static final AdvancedLVSolarPanelBlock ADVANCED_LV_PANEL = new AdvancedLVSolarPanelBlock("advanced_lv_panel", ADVANCED_LV_PANEL_TYPE);
-
-    public static final RegistryObject<Block> ADVANCED_LV_PANEL = registerBlock("advanced_lv_panel",
-            () -> new AdvancedLVSolarPanelBlock("advanced_lv_panel", ADVANCED_LV_PANEL_TYPE),
-            IEMod.IE);
-    
-    public static final RegistryObject<Block> ADVANCED_MV_PANEL = registerBlock("advanced_mv_panel",
-            () -> new AdvancedMVSolarPanelBlock("advanced_mv_panel", ADVANCED_MV_PANEL_TYPE),
-            IEMod.IE);
-    
-    public static final RegistryObject<Block> ADVANCED_HV_PANEL = registerBlock("advanced_hv_panel",
-            () -> new AdvancedHVSolarPanelBlock("advanced_hv_panel", ADVANCED_HV_PANEL_TYPE),
-            IEMod.IE);
-    
-    public static final RegistryObject<Block> ADVANCED_EV_PANEL = registerBlock("advanced_ev_panel",
-            () -> new AdvancedEVSolarPanelBlock("advanced_ev_panel", ADVANCED_EV_PANEL_TYPE),
-            IEMod.IE);
-    
-    public static final RegistryObject<Block> ADVANCED_LUV_PANEL = registerBlock("advanced_luv_panel",
-            () -> new AdvancedLUVSolarPanelBlock("advanced_luv_panel", ADVANCED_LUV_PANEL_TYPE),
-            IEMod.IE);
-    public static final RegistryObject<Block> ADVANCED_UV_PANEL = registerBlock("advanced_uv_panel",
-            () -> new AdvancedUVSolarPanelBlock("advanced_uv_panel", ADVANCED_UV_PANEL_TYPE),
-            IEMod.IE);
-    
 
     public static BlockEntityType<UVTransformerTileEntity> UVTRANSFORMER_TYPE = IC2Tiles.createTile("uv_transformer", UVTransformerTileEntity::new);
     public static BlockEntityType<HUVTransformerTileEntity> HUVTRANSFORMER_TYPE = IC2Tiles.createTile("huv_transformer", HUVTransformerTileEntity::new);
@@ -346,6 +349,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> HELIUM_REACTOR = registerBlock("helium_reactor",
             ()-> new HeliumReactorBlock("helium_reactor", HELIUM_REACTOR_TYPE),
             IEMod.IE);
+
+    public static final RegistryObject<Block> ADVANCED_WINDMILL = registerBlock("advanced_windmill",
+            ()-> new WindFarmBlock("advanced_windmill", IModBlockDropProvider.SELF_OR_NANO, ITextureProvider.noState("ie", "advanced_windmill"), ADVANCED_WINDMILL_TYPE),
+            IEMod.IE);
+
     private static <T extends Block>RegistryObject<T>
     registerBlock(String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -358,6 +366,7 @@ public class ModBlocks {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         return toReturn;
     }
+
 
     private static <T extends Block>
     RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab){

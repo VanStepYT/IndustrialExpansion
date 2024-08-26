@@ -6,6 +6,7 @@ import ic2.api.recipes.registries.IAdvancedCraftingManager;
 import ic2.api.recipes.registries.IMachineRecipeList;
 import ic2.core.IC2;
 import ic2.core.block.machines.recipes.MachineRecipeList;
+import ic2.core.platform.recipes.crafting.helpers.RecipeMods;
 import ic2.core.platform.recipes.misc.AdvRecipeRegistry;
 import ic2.core.platform.registries.IC2Blocks;
 import ic2.core.platform.registries.IC2Items;
@@ -16,8 +17,11 @@ import net.minecraft.util.datafix.fixes.RecipesFix;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.loading.FMLEnvironment;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class IERecipes {
     public static final MachineRecipeList AUTOFARM = new MachineRecipeList("autofarm",IERecipes::initAutofarmRecipes){
@@ -52,6 +56,13 @@ public class IERecipes {
 
     public static void initCraftingRecipes(IAdvancedCraftingManager manager) {
         //SolarStuff2
+        if(ModList.get().isLoaded("ae2")){
+            manager.addShapedRecipe(rl("ae_certus_recipe"),
+                    new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation("ae2","certus_quartz_crystal")), 10),
+                    "  A", "A A", "  A",
+                    'A', IC2Items.UUMATTER,
+                    RecipeMods.HIDDEN_RECIPE);
+        }
         manager.addShapedRecipe(rl("autofarm"),
                 new ItemStack(ModBlocks.AUTOFARM.get().asItem()),
                 "ABA", "CDC", "EFG",
@@ -249,7 +260,7 @@ public class IERecipes {
                 new ItemStack(ModBlocks.SOLAR_REACTOR.get()),
                 "ABA", "CDC", "EFE",
                 'A', IC2Items.PESD,
-                'B', ModBlocks.ADVANCED_LV_PANEL.get(),
+                'B', ModBlocks.MV_PANEL.get(),
                 'C', IC2Items.PLATE_IRIDIUM,
                 'D', ModItems.HIGHLY_ADVANCED_ALLOY.get(),
                 'E', IC2Blocks.STEAM_REACTOR_CHAMBER,
@@ -322,7 +333,7 @@ public class IERecipes {
                 'C', IC2Items.PLASMA_CABLE,
                 'S', ModItems.HELIUM_CELL.get(),
                 '#', ModItems.NANO_CIRCUIT.get(),
-                'P', ModItems.DENSE_IRIDIUM_PLATE);
+                'P', ModItems.DENSE_IRIDIUM_PLATE.get());
 
         manager.addShapedRecipe(rl("nano_circuit"),
                 ModItems.NANO_CIRCUIT.get().getDefaultInstance(),
@@ -604,61 +615,84 @@ public class IERecipes {
                 'T', ModItems.SPECTRAL_CRAFTING_COMPONENT.get(),
                 'M', ModBlocks.QUANTUM_MACHINE_CASING.get());
 
-        manager.addShapedRecipe(rl("advanced_lv_solar_panel"),
-                new ItemStack(ModBlocks.ADVANCED_LV_PANEL.get()),
-                "ABA", "M#M", "ATA",
+        manager.removeCraftingRecipe(new ResourceLocation("ic2","solar_panel"));
+        manager.removeCraftingRecipe(new ResourceLocation("ic2","lv_solar_panel"));
+        manager.removeCraftingRecipe(new ResourceLocation("ic2","mv_solar_panel"));
+        manager.removeCraftingRecipe(new ResourceLocation("ic2","hv_solar_panel"));
+        manager.removeCraftingRecipe(new ResourceLocation("ic2","solar_turbine"));
+
+        manager.addShapedRecipe(rl("solar_turbine"),
+                new ItemStack(IC2Blocks.SOLAR_TURBINE),
+                "ABA", "CDC", "AEA",
                 'A', IC2Items.PLATE_ADVANCED_ALLOY,
+                'B', ModBlocks.ULV_PANEL.get(),
+                'C', IC2Blocks.PUMP,
+                'D', IC2Items.TURBINE_BLADE,
+                'E', IC2Blocks.ADVANCED_MACHINE_BLOCK);
+
+        manager.addShapedRecipe(rl("ulv_panel"),
+                new ItemStack(ModBlocks.ULV_PANEL.get()),
+                "ABA", "BAB", "CDC",
+                'A', Tags.Items.GLASS,
+                'B', IC2Tags.DUST_COAL,
+                'C', IC2Items.CIRCUIT,
+                'D', IC2Blocks.GENERATOR);
+
+        manager.addShapedRecipe(rl("lv_panel"),
+                new ItemStack(ModBlocks.LV_PANEL.get()),
+                "ABA", "CDC", "DED",
+                'A', IC2Blocks.MACHINE_BLOCK,
+                'B', IC2Items.RE_BATTERY,
+                'C', IC2Tags.INGOT_TIN,
+                'D', ModBlocks.ULV_PANEL.get(),
+                'E', IC2Blocks.TRANSFORMER_LV);
+
+        manager.addShapedRecipe(rl("mv_panel"),
+                new ItemStack(ModBlocks.MV_PANEL.get()),
+                "ABA", "CDC", "DED",
+                'A', IC2Blocks.ADVANCED_MACHINE_BLOCK,
                 'B', IC2Items.ENERGY_CRYSTAL,
-                'M', IC2Blocks.ADVANCED_MACHINE_BLOCK,
-                '#', IC2Blocks.SOLAR_PANEL_LV,
-                'T', IC2Blocks.TRANSFORMER_MV);
+                'C', IC2Tags.INGOT_REFINED_IRON,
+                'D', ModBlocks.LV_PANEL.get(),
+                'E', IC2Blocks.TRANSFORMER_MV);
 
-        manager.addShapedRecipe(rl("advanced_mv_solar_panel"),
-                new ItemStack(ModBlocks.ADVANCED_MV_PANEL.get()),
-                "ABA", "M#M", "ATA",
-                'A', IC2Items.PLATE_ADVANCED_ALLOY,
+        manager.addShapedRecipe(rl("hv_panel"),
+                new ItemStack(ModBlocks.HV_PANEL.get()),
+                "ABA", "CDC", "DED",
+                'A', IC2Blocks.STABILIZED_MACHINE_BLOCK,
                 'B', IC2Items.LAPATRON_CRYSTAL,
-                'M', IC2Blocks.ADVANCED_MACHINE_BLOCK,
-                '#', ModBlocks.ADVANCED_LV_PANEL.get(),
-                'T', IC2Blocks.SOLAR_PANEL_MV);
+                'C', IC2Tags.INGOT_BRONZE,
+                'D', ModBlocks.MV_PANEL.get(),
+                'E', IC2Blocks.TRANSFORMER_HV);
 
-        manager.addShapedRecipe(rl("advanced_hv_solar_panel"),
-                new ItemStack(ModBlocks.ADVANCED_HV_PANEL.get()),
-                "ABA", "M#M", "ATA",
-                'A', ModItems.HIGHLY_ADVANCED_ALLOY.get(),
-                'B', IC2Items.LAPATRON_CRYSTAL,
-                'M', IC2Blocks.STABILIZED_MACHINE_BLOCK,
-                '#', ModBlocks.ADVANCED_MV_PANEL.get(),
-                'T', IC2Blocks.SOLAR_PANEL_HV);
-
-        manager.addShapedRecipe(rl("advanced_ev_solar_panel"),
-                new ItemStack(ModBlocks.ADVANCED_EV_PANEL.get()),
-                "ABA", "M#M", "ATA",
-                'A', ModItems.HIGHLY_ADVANCED_ALLOY.get(),
+        manager.addShapedRecipe(rl("ev_panel"),
+                new ItemStack(ModBlocks.EV_PANEL.get()),
+                "ABA", "CDC", "DED",
+                'A', IC2Blocks.COLOSSAL_BASE,
                 'B', IC2Items.GLOWTRONIC_CRYSTAL,
-                'M', ModBlocks.NANO_MACHINE_CASING.get(),
-                '#', ModBlocks.ADVANCED_HV_PANEL.get(),
-                'T', IC2Blocks.TRANSFORMER_EV);
+                'C', IC2Tags.INGOT_SILVER,
+                'D', ModBlocks.HV_PANEL.get(),
+                'E', IC2Blocks.TRANSFORMER_EV);
 
-        manager.addShapedRecipe(rl("advanced_luv_solar_panel"),
-                new ItemStack(ModBlocks.ADVANCED_LUV_PANEL.get()),
-                "QBQ", "M#M", "ATA",
-                'A', ModItems.HIGHLY_ADVANCED_ALLOY.get(),
-                'Q', ModItems.MOON_MATTER.get(),
+        manager.addShapedRecipe(rl("iv_panel"),
+                new ItemStack(ModBlocks.IV_PANEL.get()),
+                "ABA", "CDC", "DED",
+                'A', ModBlocks.NANO_MACHINE_CASING.get(),
                 'B', IC2Items.UESC,
-                'M', ModBlocks.QUANTUM_MACHINE_CASING.get(),
-                '#', ModBlocks.ADVANCED_EV_PANEL.get(),
-                'T', ModBlocks.UV_TRANSFORMER.get());
+                'C', IC2Tags.INGOT_ALUMINIUM,
+                'D', ModBlocks.EV_PANEL.get(),
+                'E', IC2Blocks.TRANSFORMER_IV);
 
-        manager.addShapedRecipe(rl("advanced_uv_solar_panel"),
-                new ItemStack(ModBlocks.ADVANCED_UV_PANEL.get()),
-                "QBQ", "M#M", "ATA",
-                'Q', ModItems.SPECTRALIUM.get(),
-                'A', ModItems.SPECTRAL_PLATE.get(),
-                'B', ModItems.SPECTRAL_CRYSTAL.get(),
-                'M', ModBlocks.SPECTRAL_MACHINE_CASING.get(),
-                '#', ModBlocks.ADVANCED_LUV_PANEL.get(),
-                'T', ModBlocks.UTESU.get());
+        manager.addShapedRecipe(rl("luv_panel"),
+                new ItemStack(ModBlocks.LUV_PANEL.get()),
+                "ABA", "CDC", "DED",
+                'A', ModBlocks.QUANTUM_MACHINE_CASING.get(),
+                'B', IC2Items.PESD,
+                'C', IC2Items.ORE_IRIDIUM,
+                'D', ModBlocks.IV_PANEL.get(),
+                'E', ModBlocks.UV_TRANSFORMER.get());
+
+
 
         manager.addShapedRecipe(rl("uv_transformer"),
                 new ItemStack(ModBlocks.UV_TRANSFORMER.get()),
@@ -725,7 +759,7 @@ public class IERecipes {
             r.addSimpleRecipe(rl("singularium"), new ItemStack(ModItems.SINGULARIUM.get()), new ItemStack(ModItems.DARK_MATTER.get(), 4));
             r.addSimpleRecipe(rl("silicon"), new ItemStack(ModItems.SILICON.get()), new ItemStack(Items.QUARTZ, 1));
             r.addSimpleRecipe(rl("empty_hydrogen"), new ItemStack(IC2Items.CELL_EMPTY), new ItemStack(ModItems.HYDROGEN_CELL.get(), 1));
-            r.addSimpleRecipe(rl("empty_helium"), new ItemStack(ModItems.HYDROGEN_CELL.get()), new ItemStack(ModItems.HELIUM_CELL.get(), 1));
+            r.addSimpleRecipe(rl("empty_helium"), new ItemStack(IC2Items.CELL_EMPTY, 3), new ItemStack(ModItems.HELIUM_CELL.get(), 1));
         });
 
         IC2.RECIPES.get(true).macerator.registerListener(r -> {

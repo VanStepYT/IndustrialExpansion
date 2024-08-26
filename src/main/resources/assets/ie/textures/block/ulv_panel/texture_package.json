@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/ulv_panel/side",
+	"down": "ie:block/ulv_panel/down",
+	"up": "ie:block/ulv_panel/up",
+	"west": "ie:block/ulv_panel/side",
+	"east": "ie:block/ulv_panel/side",
+	"south": "ie:block/ulv_panel/side"
+}

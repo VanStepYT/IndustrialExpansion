@@ -1,0 +1,15 @@
+{
+  "active_north": "ie:block/machine/spectral_compressor/side",
+  "active_down": "ie:block/machine/spectral_compressor/side",
+  "active_up": "ie:block/machine/spectral_compressor/side",
+  "active_west": "ie:block/machine/spectral_compressor/side",
+  "active_east": "ie:block/machine/spectral_compressor/side",
+  "active_south": "ie:block/machine/spectral_compressor/active_main",
+
+  "inactive_north": "ie:block/machine/spectral_compressor/side",
+  "inactive_down": "ie:block/machine/spectral_compressor/side",
+  "inactive_up": "ie:block/machine/spectral_compressor/side",
+  "inactive_west": "ie:block/machine/spectral_compressor/side",
+  "inactive_east": "ie:block/machine/spectral_compressor/side",
+  "inactive_south": "ie:block/machine/spectral_compressor/inactive_main"
+}

@@ -32,8 +32,8 @@ public class MassMultiplicator extends BaseElectricTileEntity implements ITickLi
         this.listeners = new CapabilityCache(this, DirectionList.ALL, IC2Classic.NOTIFY_CAPABILITY);
         this.addedToEnet = false;
         this.maxInput =  524288;
-        this.maxEnergy = 70000100;
-        this.tier = EnergyNet.INSTANCE.getTierFromPower(maxInput);
+        this.maxEnergy = 700000100;
+        this.tier = 8;
         this.baseTier = this.tier;
     }
 
@@ -42,8 +42,9 @@ public class MassMultiplicator extends BaseElectricTileEntity implements ITickLi
         if (amount <= this.maxEnergy && amount > 0) {
             int added = Math.min(amount, this.maxEnergy - this.energy);
             if (added > 0) {
-                if(added/10000 > 1){
-                    this.energy *= (int) (added /100000);
+                if(added/32768 >= 1){
+                    this.energy *= (int) (added /16384);
+                    this.energy+=1;
                 }
                 else{
                     this.energy+=added;

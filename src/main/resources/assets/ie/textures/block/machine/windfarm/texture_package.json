@@ -1,0 +1,8 @@
+{
+  "north": "ie:block/machine/windfarm/south",
+  "down": "ie:block/machine/windfarm/side",
+  "up": "ie:block/machine/windfarm/side",
+  "west": "ie:block/machine/windfarm/side",
+  "east": "ie:block/machine/windfarm/side",
+  "south": "ie:block/machine/windfarm/front"
+}

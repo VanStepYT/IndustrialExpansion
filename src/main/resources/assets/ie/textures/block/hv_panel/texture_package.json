@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/hv_panel/side",
+	"down": "ie:block/hv_panel/down",
+	"up": "ie:block/hv_panel/up",
+	"west": "ie:block/hv_panel/side",
+	"east": "ie:block/hv_panel/side",
+	"south": "ie:block/hv_panel/side"
+}

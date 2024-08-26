@@ -48,7 +48,8 @@ public class ControllerTile extends BaseElectricTileEntity implements ITickListe
     private SimplePosition audioPos;
 
     public ControllerTile(BlockPos pos, BlockState state) {
-        super(pos, state, 1, Integer.MAX_VALUE, 0);}
+        super(pos, state, 1, Integer.MAX_VALUE, 0);
+    }
 
     @Override
     public void onLoaded() {

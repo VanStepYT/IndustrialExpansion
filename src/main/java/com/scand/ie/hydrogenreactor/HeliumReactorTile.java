@@ -121,12 +121,12 @@ public class HeliumReactorTile extends BaseGeneratorTileEntity implements IEUPro
 
         this.heat = heat - (cooling*multa);
         if (heat > 10f){
-            if (this.inventory.get(0).getCount() > 4){
+            if (this.inventory.get(0).getCount() > 5){
                 this.production = Math.round(heat*this.multi);
                 this.counter++;
                 if (this.counter%2000 == 0){
                     this.setOrGrow(1, new ItemStack(ModItems.HELIUM_CELL.get(), 2), true);
-                    this.inventory.get(0).shrink(5);
+                    this.inventory.get(0).shrink(6);
                     this.counter = 0;
 
                 }

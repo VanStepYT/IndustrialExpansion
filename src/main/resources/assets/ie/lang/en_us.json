@@ -80,6 +80,12 @@
   "item.ie.spectral_suit_helmet": "Spectral Suit Helmet",
   "item.ie.spectral_suit_boots": "Spectral Suit Boots",
 
+  "item.ie.nano_wrench": "Nano wrench",
+  "item.ie.quantum_wrench": "Quantum wrench",
+
+  "item.ie.dense_carbon_plate": "Dense carbon plate",
+  "item.ie.dense_iridium_plate": "Dense iridium plate",
+
   "item.ie.silicon": "Silicon",
 
   "block.ie.quantum_quarry": "Quantum Quarry",
@@ -155,5 +161,13 @@
 
   "death.attack.black_hole": "%1$s turned into spaghetti",
 
-  "block.ie.autofarm": "Autofarm"
+  "block.ie.autofarm": "Autofarm",
+
+  "block.ie.ulv_panel": "ULV Solar Panel",
+  "block.ie.lv_panel": "LV Solar Panel",
+  "block.ie.mv_panel": "MV Solar Panel",
+  "block.ie.hv_panel": "HV Solar Panel",
+  "block.ie.ev_panel": "EV Solar Panel",
+  "block.ie.iv_panel": "IV Solar Panel",
+  "block.ie.luv_panel": "LuV Solar Panel"
 }

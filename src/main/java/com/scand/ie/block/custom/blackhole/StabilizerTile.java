@@ -2,10 +2,13 @@ package com.scand.ie.block.custom.blackhole;
 
 import com.scand.ie.IEMod;
 import com.scand.ie.block.ModBlocks;
+import ic2.api.energy.IEnergyNet;
 import ic2.core.block.base.features.IAreaOfEffect;
 import ic2.core.block.base.features.ITickListener;
 import ic2.core.block.base.tiles.impls.BaseGeneratorTileEntity;
 import ic2.core.block.rendering.world.impl.BlockHighlighter;
+import ic2.core.energy.EnergyNetGrid;
+import ic2.core.energy.EnergyNetLocal;
 import ic2.core.inventory.container.IC2Container;
 import ic2.core.item.renders.IC2TileEntityStackRenderer;
 import ic2.core.platform.rendering.events.TilesRenderedEvent;
@@ -26,7 +29,7 @@ public class StabilizerTile extends BaseGeneratorTileEntity implements ITickList
 
     public StabilizerTile(BlockPos pos, BlockState state) {
         super(pos, state, 0);
-        this.production = 1048576;
+        this.production = 131072;
     }
 
 

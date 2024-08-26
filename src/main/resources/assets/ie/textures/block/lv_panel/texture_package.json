@@ -1,0 +1,8 @@
+{
+	"north": "ie:block/lv_panel/side",
+	"down": "ie:block/lv_panel/down",
+	"up": "ie:block/lv_panel/up",
+	"west": "ie:block/lv_panel/side",
+	"east": "ie:block/lv_panel/side",
+	"south": "ie:block/lv_panel/side"
+}

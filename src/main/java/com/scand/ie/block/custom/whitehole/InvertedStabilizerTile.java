@@ -18,7 +18,7 @@ public class InvertedStabilizerTile extends BaseGeneratorTileEntity implements I
 
     public InvertedStabilizerTile(BlockPos pos, BlockState state) {
         super(pos, state, 0);
-        this.production = 2097152;
+        this.production = 65536;
     }
 
 
@@ -49,7 +49,7 @@ public class InvertedStabilizerTile extends BaseGeneratorTileEntity implements I
     }
 
     private boolean checkforSingularity(BlockPos pos) {
-        List<BlockState> blocks = level.getBlockStates(new AABB(pos.above(14)).inflate(14)).toList();
+        List<BlockState> blocks = level.getBlockStates(new AABB(pos).inflate(14)).toList();
 
         for (BlockState block : blocks){
             if(block.getBlock() == ModBlocks.INVERTED_SINGULARITY.get()){
